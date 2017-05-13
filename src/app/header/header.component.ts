@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent {
 
-  constructor() { }
+  logoPath;
+  constructor() {
+    this.logoPath='\\assets\\img\\logocompany.png'
+  }
 
 
 }
