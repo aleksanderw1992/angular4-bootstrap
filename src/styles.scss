@@ -1,3 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'variables';
 @import '../node_modules/bootstrap/scss/bootstrap';
+
+/*
+No workaround found - all scss files should be included manually =(
+Actually styleUrls: ['./header.component.scss'] is not necessary in components =(
+*/
+@import './app/app.component.scss';
+@import './app/header/header.component.scss';
+
+
