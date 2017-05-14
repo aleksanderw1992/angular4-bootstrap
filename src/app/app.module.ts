@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     NgbModule.forRoot(),
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
