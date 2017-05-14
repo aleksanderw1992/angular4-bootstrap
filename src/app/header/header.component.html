@@ -3,56 +3,13 @@
     <div class="navbar-header">
       <img [src]="logoPath" alt="company logo" width="100px" height="100px">
     </div>
-    <ul class="nav navbar-nav">
-      <li><a href="#">Page 1</a></li>
-      <li><a href="#">Page 2</a></li>
-      <li><a href="#">Page 3</a></li>
-    </ul>
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-primary" id="dropdownMenu1" ngbDropdownToggle>Toggle dropdown</button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <button class="dropdown-item">Action - 1</button>
+        <button class="dropdown-item">Another Action</button>
+        <button class="dropdown-item">Something else is here</button>
+      </div>
+    </div>
   </div>
 </nav>
-<hr>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown button
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-</div>
-<hr>
-<div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-    <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a href="#">HTML</a></li>
-    <li><a href="#">CSS</a></li>
-    <li><a href="#">JavaScript</a></li>
-  </ul>
-</div>
-
-
-
-<hr>
-<div class="btn-group" dropdown>
-  <button id="single-button" type="button" class="btn btn-primary" dropdownToggle>
-    Button dropdown <span class="caret"></span>
-  </button>
-  <ul dropdownMenu role="menu" aria-labelledby="single-button">
-    <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
-    <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
-    <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
-    <li class="divider dropdown-divider"></li>
-    <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a></li>
-  </ul>
-</div>
-
-<div class="dropdown" dropdown [dropdownToggle]="false" (onOpen)="doSomeActionOnOpen()" (onClose)="doSomeActionOnClose()">
-  <button class="btn btn-primary" dropdown-open>My Heroes</button>
-  <ul class="dropdown-menu">
-    <li><a>Badman</a></li>
-    <li><a>Sadman</a></li>
-    <li><a>Lieman</a></li>
-  </ul>
-</div>
