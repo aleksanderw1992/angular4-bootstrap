@@ -1,16 +1,16 @@
-<nav class="navbar navbar-default" fxLayout="row">
+<nav class="navbar navbar-default">
   <div class="container-fluid flex-container"
        fxLayout="row"
        fxLayout.xs="column"
        fxLayoutAlign="center center"
        fxLayoutAlign.xs="start">
-    <div class="navbar-header flex-item" fxFlex="20%" fxFlex.xs="40%">
+    <div class="navbar-header flex-item" fxFlex>
       <img [src]="logoPath" alt="company logo" width="100px" height="100px">
     </div>
     <div class="flex-item" fxFlex>
       <!-- WTF? why I need this element?-->
     </div>
-    <div ngbDropdown class="d-inline-block flex-item" fxFlex="25px">
+    <div ngbDropdown class="d-inline-block flex-item" fxFlex>
       <button class="btn btn-outline-primary" id="dropdownMenu1" ngbDropdownToggle>Toggle dropdown</button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
         <button class="dropdown-item">Action - 1</button>
