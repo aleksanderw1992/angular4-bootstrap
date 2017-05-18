@@ -11,7 +11,8 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
 import { ElementsManagementPageComponent } from './pages/elements-management-page/elements-management-page.component';
 import { ConfigurationManagementPageComponent } from './pages/configuration-management-page/configuration-management-page.component';
 import { AppRoutingModule } from './app-routing.module';
-import {ConfigurationService} from './pages/configuration-management-page/configuration.service'
+import {ConfigurationService} from './pages/configuration-management-page/configuration.service';
+import { ElementsTableComponent } from './pages/elements-management-page/elements-table/elements-table.component'
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import {ConfigurationService} from './pages/configuration-management-page/config
     HeaderComponent,
     MainPageComponent,
     ElementsManagementPageComponent,
-    ConfigurationManagementPageComponent
+    ConfigurationManagementPageComponent,
+    ElementsTableComponent
   ],
   imports: [
     NgbModule.forRoot(),
