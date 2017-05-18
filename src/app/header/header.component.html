@@ -1,21 +1,14 @@
 <nav class="navbar navbar-default">
-  <div class="container-fluid flex-container"
-       fxLayout="row"
-       fxLayout.xs="column"
-       fxLayoutAlign="center center"
-       fxLayoutAlign.xs="start">
-    <div class="navbar-header flex-item" fxFlex>
+  <div class="container-fluid">
+    <div class="navbar-header" >
       <img [src]="logoPath" alt="company logo" width="100px" height="100px">
     </div>
-    <div class="flex-item" fxFlex>
-      <!-- WTF? why I need this element?-->
-    </div>
-    <div ngbDropdown class="d-inline-block flex-item" fxFlex>
-      <button class="btn btn-outline-primary" id="dropdownMenu1" ngbDropdownToggle>Toggle dropdown</button>
+    <div ngbDropdown >
+      <button class="btn btn-outline-primary" id="dropdownMenu1" ngbDropdownToggle>{{selectedPage}}</button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <button class="dropdown-item">Action - 1</button>
-        <button class="dropdown-item">Another Action</button>
-        <button class="dropdown-item">Something else is here</button>
+        <button class="dropdown-item" (click)="onToogle(0)">Strona główna</button>
+        <button class="dropdown-item" (click)="onToogle(1)">Zarządzanie elementami</button>
+        <button class="dropdown-item" (click)="onToogle(2)">Konfiguracja aplikacji</button>
       </div>
     </div>
   </div>
