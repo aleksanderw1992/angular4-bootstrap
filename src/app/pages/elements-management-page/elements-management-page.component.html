@@ -1,3 +1,20 @@
-<p>
-  elements-management-page works!
-</p>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <div class="form-group">
+                <label for="element">Element</label>
+                <select
+                        id="element"
+                        class="form-control"
+                        [(ngModel)]="element">
+                    <option value="author">Autor</option>
+                    <option value="category">Kategoria</option>
+                    <option value="country">Kraj</option>
+                    <option value="book">Ksi¹¿ka</option>
+                    <option value="medium">Rodzaj noœnika</option>
+                    <option value="cover">Rodzaj ok³adki</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
