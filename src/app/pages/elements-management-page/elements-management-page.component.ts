@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-elements-management-page',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./elements-management-page.component.scss']
 })
 export class ElementsManagementPageComponent implements OnInit {
-
-  constructor() { }
-
+  constructor(private router: Router,
+              private route: ActivatedRoute) {
+  }
+  element='';
   ngOnInit() {
+  }
+  onElementChosen(){
+    this.router.navigate([this.element], {relativeTo: this.route});
+
   }
 
 }

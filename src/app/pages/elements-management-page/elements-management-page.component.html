@@ -6,7 +6,8 @@
                 <select
                         id="element"
                         class="form-control"
-                        [(ngModel)]="element">
+                        [(ngModel)]="element"
+                        (change)="onElementChosen()">
                     <option value="author">Autor</option>
                     <option value="category">Kategoria</option>
                     <option value="country">Kraj</option>
@@ -18,5 +19,5 @@
         </div>
     </div>
 
-    <app-elements-table *ngIf="element"></app-elements-table>
+    <router-outlet></router-outlet>
 </div>
