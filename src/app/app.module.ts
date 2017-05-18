@@ -11,6 +11,7 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
 import { ElementsManagementPageComponent } from './pages/elements-management-page/elements-management-page.component';
 import { ConfigurationManagementPageComponent } from './pages/configuration-management-page/configuration-management-page.component';
 import { AppRoutingModule } from './app-routing.module';
+import {ConfigurationService} from './pages/configuration-management-page/configuration.service'
 
 
 @NgModule({
@@ -29,7 +30,7 @@ import { AppRoutingModule } from './app-routing.module';
     FlexLayoutModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ConfigurationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
