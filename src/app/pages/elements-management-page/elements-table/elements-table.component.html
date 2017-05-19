@@ -2,12 +2,20 @@
 
   <table class="table table-responsive">
     <thead>
-    <th *ngFor="let col of model.columns">
-      {{col.value}}
-    </th>
-    <th>
-      Akcja
-    </th>
+    <tr>
+      <th *ngFor="let col of model.columns">
+        {{col.value}}
+      </th>
+      <th>
+        Akcja
+      </th>
+    </tr>
+    <tr *ngFor="let row of data">
+      <td *ngFor="let col of model.columns">
+        {{row[col.colName]}}
+      </td>
+      <td>przyciski</td>
+    </tr>
 
 
     </thead>
