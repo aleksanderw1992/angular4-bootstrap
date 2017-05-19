@@ -3,7 +3,6 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
 import {AppEventHolder} from '../../../common/app-events-holder.service'
 import {TableModel} from './table-model.model';
 import {Repository} from "./repository.service";
-import {element} from "protractor";
 
 @Component({
   selector: 'app-elements-table',

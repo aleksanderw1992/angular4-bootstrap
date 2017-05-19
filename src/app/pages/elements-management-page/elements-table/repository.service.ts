@@ -1,12 +1,13 @@
 export class Repository {
   public initialData = {
     author: [
-      {firstName: 'firstName', surname: 'surname', country: 'country'},
-      {firstName: 'asdf', surname: 'vdf', country: 'vtr'}
-      ],
-    category: [{name: 'category'},{name: 'sadf'},],
-    country: [{origName: 'origName', flag: 'csd'},{origName: 'asdf', flag: 'csd'},],
+      {id: 1, firstName: 'firstName', surname: 'surname', country: 'country'},
+      {id: 2, firstName: 'asdf', surname: 'vdf', country: 'vtr'}
+    ],
+    category: [{id: 1, name: 'category'}, {name: 'sadf'},],
+    country: [{id: 1, origName: 'origName', flag: 'csd'}, {id: 2, origName: 'asdf', flag: 'csd'},],
     book: [{
+      id: 1,
       title: 'asdf',
       author: 'asdf',
       isbm: 'asdf',
@@ -15,7 +16,8 @@ export class Repository {
       cover: 'asdf',
       price: 'asdf',
       coverImg: 'asdf',
-    },{
+    }, {
+      id: 2,
       title: 'Really looooooooooooong my awesome title',
       author: 'asdf',
       isbm: 'asdf',
@@ -25,8 +27,8 @@ export class Repository {
       price: 'asdf',
       coverImg: 'asdf',
     },],
-    medium: [{name: 'vdsdd'}],
-    cover: [{name: 'asdf'}],
+    medium: [{id: 1, name: 'vdsdd'}],
+    cover: [{id: 1, name: 'asdf'}],
   };
 
   getAll(element: string) {
