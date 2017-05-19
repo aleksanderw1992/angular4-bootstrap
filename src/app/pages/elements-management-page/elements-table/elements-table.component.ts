@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { AppEventHolder } from '../../../common/app-events-holder.service'
+
 
 @Component({
   selector: 'app-elements-table',
@@ -9,7 +11,8 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 export class ElementsTableComponent implements OnInit {
   element='';
   constructor(private router: Router,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+  private appEventHolder:AppEventHolder) {
   }
 
   ngOnInit() {
@@ -17,7 +20,7 @@ export class ElementsTableComponent implements OnInit {
         .subscribe(
         (params: Params) => {
           this.element = params['element-name'];
-          //todo link from here to elem-management to bind when come directly from routing
+            this.appEventHolder.publishElement(this.element)
         }
     );
   }
