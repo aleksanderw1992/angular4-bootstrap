@@ -21,7 +21,6 @@ export class HeaderComponent {
               private appEventHolder:AppEventHolder) {
 
     this.appEventHolder.page.subscribe((data) => {
-      debugger;
         this.selectedPage =  this.dropdownLabels.filter(e =>e.id === data)[0].name as string;
     });
   }
