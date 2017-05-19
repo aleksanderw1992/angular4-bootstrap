@@ -23,7 +23,7 @@ export class TableModel{
       columns:[
         {colName:'title', value:'Tytuł'},
         {colName:'author', value:'Autor'},
-        {colName:'isbm', value:'ISBN'},
+        {colName:'isbn', value:'ISBN'},
         {colName:'category', value:'Kategorie'},
         {colName:'medium', value:'Rodzaje nośników'},
         {colName:'cover', value:'Rodzaje okładek'},

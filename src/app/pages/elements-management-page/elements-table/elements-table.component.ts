@@ -31,9 +31,8 @@ export class ElementsTableComponent implements OnInit {
           this.element = params['element-name'];
           this.appEventHolder.publishElement(this.element);
           this.model = this.tableModel.model[this.element];
-          // this.data = this.repository.getAll(this.element);
-          console.log(this.model);
-          // console.log(this.data);
+          this.data = this.repository.getAll(this.element);
+          console.log(this.data);
 
         }
       );
