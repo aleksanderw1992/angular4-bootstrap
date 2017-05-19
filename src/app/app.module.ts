@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ConfigurationService} from './pages/configuration-management-page/configuration.service';
 import { ElementsTableComponent } from './pages/elements-management-page/elements-table/elements-table.component'
 import { AppEventHolder } from './common/app-events-holder.service'
+import {Repository} from "./pages/elements-management-page/elements-table/repository.service";
 
 
 @NgModule({
@@ -33,7 +34,7 @@ import { AppEventHolder } from './common/app-events-holder.service'
     FlexLayoutModule,
     AppRoutingModule
   ],
-  providers: [ConfigurationService, AppEventHolder],
+  providers: [ConfigurationService, AppEventHolder, Repository],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,42 +3,42 @@ export class TableModel{
   public model ={
     author:{
       columns:[
-        'Imie',
-        'Nazwisko',
-        'Kraj'
+        {colName:'firstName', value:'Imie'},
+        {colName:'surname', value:'Nazwisko'},
+        {colName:'country', value:'Kraj'}
       ]
     },
     category:{
       columns:[
-        'Nazwa'
+        { colName:'name', value:'Nazwa' }
       ]
     },
     country:{
       columns:[
-        'Nazwa w j. oryginalnym',
-        'Flage'
+        {colName:'origName', value:'Nazwa w j. oryginalnym'},
+        {colName:'flag', value:'Flage'}
       ]
     },
     book:{
       columns:[
-        'Tytuł',
-        'Autor',
-        'ISBN',
-        'Kategorie',
-        'Rodzaje nośników',
-        'Rodzaje okładek',
-        'Cena',
-        'Okładka'
+        {colName:'title', value:'Tytuł'},
+        {colName:'author', value:'Autor'},
+        {colName:'isbm', value:'ISBN'},
+        {colName:'category', value:'Kategorie'},
+        {colName:'medium', value:'Rodzaje nośników'},
+        {colName:'cover', value:'Rodzaje okładek'},
+        {colName:'price', value:'Cena'},
+        {colName:'coverImg', value:'Okładka'}
       ]
     },
     medium:{
       columns:[
-        'Nazwa'
+        { colName:'name', value:'Nazwa' }
       ]
     },
     cover:{
       columns:[
-        'Nazwa']
+        { colName:'name', value:'Nazwa' }]
     },
   }
 }
