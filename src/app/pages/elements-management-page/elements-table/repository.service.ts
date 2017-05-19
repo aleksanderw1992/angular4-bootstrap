@@ -1,8 +1,11 @@
 export class Repository {
   public data = {
-    author: [{firstName: 'sdfg', surname: 'sdfg', country: 'sdfgb'}],
-    category: [{name: 'sadf'}],
-    country: [{origName: 'asdf', flag: 'csd'}],
+    author: [
+      {firstName: 'firstName', surname: 'surname', country: 'country'},
+      {firstName: 'asdf', surname: 'vdf', country: 'vtr'}
+      ],
+    category: [{name: 'category'},{name: 'sadf'},],
+    country: [{origName: 'origName', flag: 'csd'},{origName: 'asdf', flag: 'csd'},],
     book: [{
       title: 'asdf',
       author: 'asdf',
