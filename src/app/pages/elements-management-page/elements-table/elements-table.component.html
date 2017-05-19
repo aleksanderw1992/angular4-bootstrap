@@ -1,3 +1,12 @@
-<p>
-  elements-table works! {{element}}
-</p>
+<div class="row">
+
+  <table class="table table-responsive">
+    <thead>
+    <th *ngFor="let col of model.colums">
+      {{col}}
+    </th>
+
+
+    </thead>
+  </table>
+</div>
