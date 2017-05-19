@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { AppEventHolder } from '../../common/app-events-holder.service'
+import {UrlSegment} from "@angular/router";
 
+import {BehaviorSubject} from "rxjs/BehaviorSubject";
 
 @Component({
   selector: 'app-elements-management-page',
@@ -16,7 +18,9 @@ export class ElementsManagementPageComponent implements OnInit {
 }
   element='';
   ngOnInit() {
-    this.appEventHolder.event.subscribe((data) => {
+    var page =( this.route as any).url.value[0].path;
+    this.appEventHolder.publishPage(page);
+    this.appEventHolder.element.subscribe((data) => {
       this.element = data;
     });
   }

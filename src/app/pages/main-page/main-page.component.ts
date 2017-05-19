@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {BehaviorSubject} from "rxjs/BehaviorSubject";
 
 @Component({
   selector: 'app-main-page',
@@ -10,6 +11,7 @@ export class MainPageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    BehaviorSubject
   }
 
 }
