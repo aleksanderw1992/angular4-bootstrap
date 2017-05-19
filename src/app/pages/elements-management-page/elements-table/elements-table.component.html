@@ -1,6 +1,6 @@
 <div class="row">
 
-  <table class="table">
+  <table class="table table-responsive">
     <thead>
     <tr>
       <th *ngFor="let col of model.columns">
@@ -16,8 +16,11 @@
         <td *ngFor="let col of model.columns">
           {{row[col.colName]}}
         </td>
-        <td>przyciski</td>
+        <td>
+          <span class="glyphicon glyphicon-remove"></span>
+        </td>
       </tr>
     </tbody>
   </table>
 </div>
+<span class="glyphicon glyphicon-remove"></span>
