@@ -35,4 +35,21 @@ export class ElementsTableComponent implements OnInit {
       );
   }
 
+  add() {
+
+  }
+
+  view() {
+
+  }
+
+  edit() {
+
+  }
+
+  delete() {
+
+  }
+
+
 }
