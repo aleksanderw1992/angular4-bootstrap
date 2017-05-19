@@ -1,6 +1,6 @@
 <div class="row">
 
-  <table class="table table-responsive">
+  <table class="table">
     <thead>
     <tr>
       <th *ngFor="let col of model.columns">
@@ -10,14 +10,14 @@
         Akcja
       </th>
     </tr>
-    <tr *ngFor="let row of data">
-      <td *ngFor="let col of model.columns">
-        {{row[col.colName]}}
-      </td>
-      <td>przyciski</td>
-    </tr>
-
-
     </thead>
+    <tbody>
+      <tr *ngFor="let row of data">
+        <td *ngFor="let col of model.columns">
+          {{row[col.colName]}}
+        </td>
+        <td>przyciski</td>
+      </tr>
+    </tbody>
   </table>
 </div>
