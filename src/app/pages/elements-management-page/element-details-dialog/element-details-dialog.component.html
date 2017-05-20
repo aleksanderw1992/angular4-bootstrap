@@ -1,7 +1,20 @@
 <h1 md-dialog-title>Dialog (add/edit - todo i18n)</h1>
 <div md-dialog-content>
-  What would you like to do? {{data.value}}
-
+  What would you like to do?
+  <div class="row">
+    <table class="table table-responsive">
+      <tbody>
+      <tr *ngFor="let attr of  data.model.columns; let i = index;">
+        <td>
+          {{attr.value}}
+        </td>
+        <td>
+          {{!!data.data===true? data.data[attr.colName]:''}}
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 
 </div>
 <div md-dialog-actions>
