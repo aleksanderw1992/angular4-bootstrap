@@ -6,6 +6,9 @@ import {Repository} from "./repository.service";
 import {ElementDetailsDialogComponent} from "app/pages/elements-management-page/element-details-dialog/element-details-dialog.component";
 import {MdDialog, MdDialogConfig, MdDialogRef} from '@angular/material';
 
+export declare type CrudDialogOption = 'view' | 'add' | 'edit';
+
+
 @Component({
   selector: 'app-elements-table',
   templateUrl: './elements-table.component.html',
@@ -37,30 +40,36 @@ export class ElementsTableComponent implements OnInit {
         }
       );
   }
-  selectedOption: string;
 
 
-  openDialog() {
+
+  openDialog(crudDialogOption: CrudDialogOption, i:number) {
     let dialogRef = this.dialog.open(ElementDetailsDialogComponent, {
-      data: {value: 'your data'},
-      disableClose:true,
-      role:'dialog'
+      data: {
+        crudDialogOption: crudDialogOption,
+        element:this.element,
+        model:this.model,
+        data:this.data[i],
+      },
+      disableClose: true,
+      role: 'dialog'
     });
     dialogRef.afterClosed().subscribe(result => {
-      this.selectedOption = result;
       console.log(result);
     });
   }
-  add() {
-    this.openDialog()
+
+  add(i:number) {
+    this.openDialog("add", i)
   }
 
-  view() {
+  view(i:number) {
+    this.openDialog("view", i)
 
   }
 
-  edit() {
-
+  edit(i:number) {
+    this.openDialog("edit", i)
   }
 
   delete() {

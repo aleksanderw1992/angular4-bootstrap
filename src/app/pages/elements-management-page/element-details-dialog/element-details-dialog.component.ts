@@ -10,4 +10,11 @@ import {MD_DIALOG_DATA, MdDialog, MdDialogRef} from '@angular/material';
 export class ElementDetailsDialogComponent {
   constructor(public dialogRef: MdDialogRef<ElementDetailsDialogComponent>,
   @Inject(MD_DIALOG_DATA) public data: any) {}
+
+  save(){
+    this.dialogRef.close(this.data);
+  }
+  cancel(){
+    this.dialogRef.close('cancelled');
+  }
 }

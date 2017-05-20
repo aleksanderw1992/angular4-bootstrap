@@ -16,14 +16,14 @@
     </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let row of data">
+      <tr *ngFor="let row of data; let i = index;">
         <td *ngFor="let col of model.columns">
           {{row[col.colName]}}
         </td>
         <td>
-          <span (click)="view()" class="glyphicon glyphicon-eye-open"></span>
-          <span (click)="edit()" class="glyphicon glyphicon-edit"></span>
-          <span (click)="delete()" class="glyphicon glyphicon-remove"></span>
+          <span (click)="view(i)" class="glyphicon glyphicon-eye-open"></span>
+          <span (click)="edit(i)" class="glyphicon glyphicon-edit"></span>
+          <span (click)="delete(i)" class="glyphicon glyphicon-remove"></span>
         </td>
       </tr>
     </tbody>
