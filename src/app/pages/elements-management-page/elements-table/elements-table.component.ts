@@ -43,7 +43,7 @@ export class ElementsTableComponent implements OnInit {
   openDialog() {
     let dialogRef = this.dialog.open(ElementDetailsDialogComponent, {
       data: {value: 'your data'},
-      disableClose:false,
+      disableClose:true,
       role:'dialog'
     });
     dialogRef.afterClosed().subscribe(result => {
