@@ -11,7 +11,8 @@
           {{attr.value}}
         </td>
         <td>
-          <input class="form-control" type="text" value="{{!!data.data===true? data.data[attr.colName]:''}}" [readonly]="readonly()">
+          <input class="form-control" type="text" value="{{!!data.data===true? data.data[attr.colName]:''}}"
+                 [readonly]="readonly()">
         </td>
       </tr>
       </tbody>
@@ -20,6 +21,11 @@
 
 </div>
 <div md-dialog-actions>
-  <button *ngIf="data.crudDialogOption !=='view' " md-button (click)="save()">{{confirmButtonText()}}</button>
-  <button md-button (click)="cancel()">{{cancelButtonText()}}</button>
-</div>
+  <div class="row">
+    <div class="col-sm-6 col-md-5 col-md-offset-1">
+      <button *ngIf="data.crudDialogOption !=='view' " md-button (click)="save()">{{confirmButtonText()}}</button>
+    </div>
+    <div class="col-sm-6 col-md-5 col-md-offset-1">
+      <button md-button (click)="cancel()">{{cancelButtonText()}}</button>
+    </div>
+  </div>
