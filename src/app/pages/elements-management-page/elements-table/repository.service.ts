@@ -4,13 +4,13 @@ export declare type Entity = 'author' | 'category' | 'country' | 'book' | 'mediu
 export class Repository {
   public initialData = {
     author: [
-      {id: 1, firstName: 'firstName', surname: 'surname', country: 'country'},
-      {id: 2, firstName: 'asdf', surname: 'vdf', country: 'vtr'}
+      { firstName: 'firstName', surname: 'surname', country: 'country'},
+      { firstName: 'asdf', surname: 'vdf', country: 'vtr'}
     ],
-    category: [{id: 1, name: 'category'}, {name: 'sadf'},],
-    country: [{id: 1, origName: 'origName', flag: 'csd'}, {id: 2, origName: 'asdf', flag: 'csd'},],
+    category: [{ name: 'category'}, {name: 'sadf'},],
+    country: [{ origName: 'origName', flag: 'csd'}, { origName: 'asdf', flag: 'csd'}],
     book: [{
-      id: 1,
+
       title: 'asdf',
       author: 'asdf',
       isbn: 'asdf',
@@ -20,7 +20,7 @@ export class Repository {
       price: 'asdf',
       coverImg: 'asdf',
     }, {
-      id: 2,
+
       title: 'Really looooooooooooong my awesome title',
       author: 'asdf',
       isbn: 'asdf',
@@ -30,8 +30,8 @@ export class Repository {
       price: 'asdf',
       coverImg: 'asdf',
     },],
-    medium: [{id: 1, name: 'vdsdd'}],
-    cover: [{id: 1, name: 'asdf'}],
+    medium: [{ name: 'vdsdd'}],
+    cover: [{ name: 'asdf'}],
   };
 
   constructor(){
@@ -47,13 +47,14 @@ export class Repository {
   }
 
   getAll(element: string) {
-    var objectArrayToArray = function(obj){
-      var arr=[]
+    let objectArrayToArray = function(obj){
+      let arr=[]
       Object.keys(obj).forEach(e =>arr[+e]=obj[e])
       return arr
     }
     let any = JSON.parse(localStorage[element]);
     let objectArray = objectArrayToArray(any);
+    console.log(objectArray);
     return objectArray
   }
 
@@ -75,6 +76,16 @@ export class Repository {
     }
     let localStorageEntity = JSON.parse(localStorage[entity]);
     localStorageEntity[id]=data;
+    localStorage[entity]= JSON.stringify(localStorageEntity)
+  }
+
+  delete(entity: Entity, id: number): any {
+    let entities = localStorage[entity];
+    if (entities) {
+      return;
+    }
+    let localStorageEntity = JSON.parse(localStorage[entity]);
+    delete localStorageEntity[id]
     localStorage[entity]= JSON.stringify(localStorageEntity)
   }
 
