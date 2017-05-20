@@ -1,3 +1,6 @@
+export declare type Entity = 'author' | 'category' | 'country' | 'book' | 'medium' | 'cover';
+
+
 export class Repository {
   public initialData = {
     author: [
@@ -31,7 +34,56 @@ export class Repository {
     cover: [{id: 1, name: 'asdf'}],
   };
 
-  getAll(element: string) {
-    return this.initialData[element];
+  constructor(){
+    this.init()
   }
+  init() {
+    localStorage.clear()
+    for (let entityType in this.initialData) {
+      for (let entity of this.initialData[entityType]) {
+        this.save(<Entity>entityType, entity);
+      }
+    }
+  }
+
+  getAll(element: string) {
+    var objectArrayToArray = function(obj){
+      var arr=[]
+      Object.keys(obj).forEach(e =>arr[+e]=obj[e])
+      return arr
+    }
+    let any = JSON.parse(localStorage[element]);
+    let objectArray = objectArrayToArray(any);
+    return objectArray
+  }
+
+
+  save(entity: Entity, data: any): void {
+    let entities = localStorage[entity];
+    if (!entities) {
+      localStorage[entity]=JSON.stringify({})
+    }
+    let localStorageEntity = JSON.parse(localStorage[entity]);
+    let nextId = Object.keys(localStorageEntity).length;
+    localStorageEntity[nextId]=data;
+    localStorage[entity]= JSON.stringify(localStorageEntity)
+  }
+  update(entity: Entity, id: number, data: any): void {
+    let entities = localStorage[entity];
+    if (!entities) {
+      localStorage[entity]=JSON.stringify({})
+    }
+    let localStorageEntity = JSON.parse(localStorage[entity]);
+    localStorageEntity[id]=data;
+    localStorage[entity]= JSON.stringify(localStorageEntity)
+  }
+
+  get(entity: Entity, id: number): any {
+    let entities = localStorage[entity];
+    if (entities) {
+      return JSON.parse(entities)[id]
+    }
+    return null
+  }
+
 }

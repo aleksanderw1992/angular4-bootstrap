@@ -18,7 +18,7 @@ export class ElementsManagementPageComponent implements OnInit {
 }
   element='';
   ngOnInit() {
-    var page =( this.route as any).url.value[0].path;
+    let page =( this.route as any).url.value[0].path;
     this.appEventHolder.publishPage(page);
     this.appEventHolder.element.subscribe((data) => {
       this.element = data;
