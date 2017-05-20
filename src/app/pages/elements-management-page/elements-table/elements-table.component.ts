@@ -3,6 +3,8 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
 import {AppEventHolder} from '../../../common/app-events-holder.service'
 import {TableModel} from './table-model.model';
 import {Repository} from "./repository.service";
+import {ElementDetailsDialogComponent} from "app/pages/elements-management-page/element-details-dialog/element-details-dialog.component";
+import {MdDialog, MdDialogRef} from '@angular/material';
 
 @Component({
   selector: 'app-elements-table',
@@ -20,7 +22,8 @@ export class ElementsTableComponent implements OnInit {
               private route: ActivatedRoute,
               private appEventHolder: AppEventHolder,
               private tableModel: TableModel,
-              private repository: Repository) {
+              private repository: Repository,
+              public dialog: MdDialog) {
   }
 
   ngOnInit() {
@@ -34,9 +37,18 @@ export class ElementsTableComponent implements OnInit {
         }
       );
   }
+  selectedOption: string;
 
+
+  openDialog() {
+    let dialogRef = this.dialog.open(ElementDetailsDialogComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      this.selectedOption = result;
+      console.log(result);
+    });
+  }
   add() {
-
+    this.openDialog()
   }
 
   view() {

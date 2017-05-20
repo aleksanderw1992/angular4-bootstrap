@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -15,6 +15,10 @@ import { ConfigurationService} from './pages/configuration-management-page/confi
 import { ElementsTableComponent } from './pages/elements-management-page/elements-table/elements-table.component'
 import { AppEventHolder } from './common/app-events-holder.service'
 import {Repository} from "./pages/elements-management-page/elements-table/repository.service";
+import { ElementDetailsDialogComponent } from './pages/elements-management-page/element-details-dialog/element-details-dialog.component';
+// import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MaterialModule} from "@angular/material";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
 @NgModule({
@@ -24,7 +28,9 @@ import {Repository} from "./pages/elements-management-page/elements-table/reposi
     MainPageComponent,
     ElementsManagementPageComponent,
     ConfigurationManagementPageComponent,
-    ElementsTableComponent
+    ElementsTableComponent,
+    ElementDetailsDialogComponent,
+
   ],
   imports: [
     NgbModule.forRoot(),
@@ -32,8 +38,12 @@ import {Repository} from "./pages/elements-management-page/elements-table/reposi
     FormsModule,
     HttpModule,
     FlexLayoutModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    MaterialModule,
   ],
+  entryComponents:[ElementDetailsDialogComponent],
   providers: [ConfigurationService, AppEventHolder, Repository],
   bootstrap: [AppComponent]
 })
