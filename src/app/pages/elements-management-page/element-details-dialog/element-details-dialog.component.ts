@@ -9,15 +9,34 @@ import {MD_DIALOG_DATA, MdDialog, MdDialogRef} from '@angular/material';
 })
 export class ElementDetailsDialogComponent {
   constructor(public dialogRef: MdDialogRef<ElementDetailsDialogComponent>,
-  @Inject(MD_DIALOG_DATA) public data: any) {}
+              @Inject(MD_DIALOG_DATA) public data: any) {
+  }
 
-  save(){
+  constants = {
+    view: {confirm: '', cancel: 'Wróć'},
+    add: {confirm: 'Dodaj', cancel: 'Wróć'},
+    edit: {confirm: 'Edytuj', cancel: 'Wróć'},
+    delete: {confirm: 'Usuń', cancel: 'Wróć'},
+  }
+
+  save() {
     this.dialogRef.close(this.data);
   }
-  cancel(){
+
+  cancel() {
     this.dialogRef.close('cancelled');
   }
-  readonly():boolean{
-    return this.data.crudDialogOption ==='view';
+
+  readonly(): boolean {
+    return this.data.crudDialogOption === 'view' || this.data.crudDialogOption === 'delete';
+  }
+
+  cancelButtonText() {
+    return this.constants[this.data.crudDialogOption].cancel
+  }
+
+  confirmButtonText() {
+    return this.constants[this.data.crudDialogOption].confirm
+
   }
 }

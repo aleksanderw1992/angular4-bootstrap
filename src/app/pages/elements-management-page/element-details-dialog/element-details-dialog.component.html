@@ -1,5 +1,8 @@
 <h1 md-dialog-title>Dialog (add/edit - todo i18n)</h1>
 <div md-dialog-content>
+  <p *ngIf="data.crudDialogOption ==='delete'">
+    Czy na pewno chcesz usunąć ten element?
+  </p>
   <div class="row">
     <table class="table table-responsive">
       <tbody>
@@ -17,6 +20,6 @@
 
 </div>
 <div md-dialog-actions>
-  <button *ngIf="!readonly()" md-button (click)="save()">Zapisz</button>
-  <button md-button (click)="cancel()">Anuluj</button>
+  <button *ngIf="data.crudDialogOption !=='view' " md-button (click)="save()">{{confirmButtonText()}}</button>
+  <button md-button (click)="cancel()">{{cancelButtonText()}}</button>
 </div>

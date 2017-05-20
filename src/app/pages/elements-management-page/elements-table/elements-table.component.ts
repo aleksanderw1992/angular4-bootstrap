@@ -6,7 +6,7 @@ import {Repository} from "./repository.service";
 import {ElementDetailsDialogComponent} from "app/pages/elements-management-page/element-details-dialog/element-details-dialog.component";
 import {MdDialog, MdDialogConfig, MdDialogRef} from '@angular/material';
 
-export declare type CrudDialogOption = 'view' | 'add' | 'edit';
+export declare type CrudDialogOption = 'view' | 'add' | 'edit' | 'delete';
 
 
 @Component({
@@ -72,7 +72,8 @@ export class ElementsTableComponent implements OnInit {
     this.openDialog("edit", i)
   }
 
-  delete() {
+  delete(i:number) {
+    this.openDialog("delete", i)
 
   }
 
