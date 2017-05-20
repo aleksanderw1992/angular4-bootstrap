@@ -81,7 +81,7 @@ export class Repository {
 
   delete(entity: Entity, id: number): any {
     let entities = localStorage[entity];
-    if (entities) {
+    if (!entities) {
       return;
     }
     let localStorageEntity = JSON.parse(localStorage[entity]);
