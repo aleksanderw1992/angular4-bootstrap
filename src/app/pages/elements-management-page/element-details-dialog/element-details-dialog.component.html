@@ -1,4 +1,5 @@
 <h1 md-dialog-title>{{dialogTitleText()}}</h1>
+<form #f="ngForm" novalidate>
 <div md-dialog-content>
   <p *ngIf="data.crudDialogOption ==='delete'">
     Czy na pewno chcesz usunąć ten element?
@@ -11,8 +12,8 @@
           {{attr.value}}
         </td>
         <td>
-          <input class="form-control" type="text" value="{{!!data.data===true? data.data[attr.colName]:''}}"
-                 [readonly]="readonly()">
+          <input class="form-control" type="text" [ngModel]="!!data.data===true? data.data[attr.colName]:''"
+                 [readonly]="readonly()" name="{{attr.colName}}"  >
         </td>
       </tr>
       </tbody>
@@ -23,11 +24,11 @@
 <div md-dialog-actions>
   <div class="row">
     <div class="col-sm-6 col-md-5 col-md-offset-1">
-      <button *ngIf="data.crudDialogOption !=='view'" md-button (click)="save()">{{confirmButtonText()}}</button>
+      <button *ngIf="data.crudDialogOption !=='view'" md-button (click)="save(f)">{{confirmButtonText()}}</button>
     </div>
     <div class="col-sm-6 col-md-5 col-md-offset-1">
       <button md-button (click)="cancel()">{{cancelButtonText()}}</button>
     </div>
   </div>
 </div>
-
+</form>

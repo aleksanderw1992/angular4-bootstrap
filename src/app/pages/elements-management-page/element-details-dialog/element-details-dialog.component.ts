@@ -1,5 +1,6 @@
-import {Component, Inject} from '@angular/core';
+import {Component, Inject, Input} from '@angular/core';
 import {MD_DIALOG_DATA, MdDialog, MdDialogRef} from '@angular/material';
+import {NgModel} from "@angular/forms";
 
 
 @Component({
@@ -11,7 +12,6 @@ export class ElementDetailsDialogComponent {
   constructor(public dialogRef: MdDialogRef<ElementDetailsDialogComponent>,
               @Inject(MD_DIALOG_DATA) public data: any) {
   }
-
   constants = {
     view: {title:'Okno podglądu', confirm: '', cancel: 'Wróć'},
     add: {title:'Okno dodawania', confirm: 'Dodaj', cancel: 'Wróć'},
@@ -19,7 +19,8 @@ export class ElementDetailsDialogComponent {
     delete: {title:'Okno usunięcia', confirm: 'Usuń', cancel: 'Wróć'},
   }
 
-  save() {
+  save(f:any) {
+    this.data.data=f.value;
     this.dialogRef.close(this.data);
   }
 
