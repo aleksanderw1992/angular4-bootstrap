@@ -4,7 +4,7 @@ import {AppEventHolder} from '../../../common/app-events-holder.service'
 import {TableModel} from './table-model.model';
 import {Repository} from "./repository.service";
 import {ElementDetailsDialogComponent} from "app/pages/elements-management-page/element-details-dialog/element-details-dialog.component";
-import {MdDialog, MdDialogRef} from '@angular/material';
+import {MdDialog, MdDialogConfig, MdDialogRef} from '@angular/material';
 
 @Component({
   selector: 'app-elements-table',
@@ -41,7 +41,9 @@ export class ElementsTableComponent implements OnInit {
 
 
   openDialog() {
-    let dialogRef = this.dialog.open(ElementDetailsDialogComponent);
+    let dialogRef = this.dialog.open(ElementDetailsDialogComponent, {
+      data: {value: 'your data'},
+    });
     dialogRef.afterClosed().subscribe(result => {
       this.selectedOption = result;
       console.log(result);
