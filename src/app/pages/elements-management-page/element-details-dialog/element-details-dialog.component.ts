@@ -17,4 +17,7 @@ export class ElementDetailsDialogComponent {
   cancel(){
     this.dialogRef.close('cancelled');
   }
+  readonly():boolean{
+    return this.data.crudDialogOption ==='view';
+  }
 }
