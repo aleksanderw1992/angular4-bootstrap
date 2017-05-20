@@ -13,10 +13,10 @@ export class ElementDetailsDialogComponent {
   }
 
   constants = {
-    view: {confirm: '', cancel: 'Wróć'},
-    add: {confirm: 'Dodaj', cancel: 'Wróć'},
-    edit: {confirm: 'Edytuj', cancel: 'Wróć'},
-    delete: {confirm: 'Usuń', cancel: 'Wróć'},
+    view: {title:'Okno podglądu', confirm: '', cancel: 'Wróć'},
+    add: {title:'Okno dodawania', confirm: 'Dodaj', cancel: 'Wróć'},
+    edit: {title:'Okno edycji', confirm: 'Edytuj', cancel: 'Wróć'},
+    delete: {title:'Okno usunięcia', confirm: 'Usuń', cancel: 'Wróć'},
   }
 
   save() {
@@ -37,6 +37,8 @@ export class ElementDetailsDialogComponent {
 
   confirmButtonText() {
     return this.constants[this.data.crudDialogOption].confirm
-
+  }
+  dialogTitleText(){
+    return this.constants[this.data.crudDialogOption].title
   }
 }
