@@ -43,6 +43,8 @@ export class ElementsTableComponent implements OnInit {
   openDialog() {
     let dialogRef = this.dialog.open(ElementDetailsDialogComponent, {
       data: {value: 'your data'},
+      disableClose:false,
+      role:'dialog'
     });
     dialogRef.afterClosed().subscribe(result => {
       this.selectedOption = result;
