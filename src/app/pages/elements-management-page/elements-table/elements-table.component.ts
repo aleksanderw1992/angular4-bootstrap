@@ -42,37 +42,50 @@ export class ElementsTableComponent implements OnInit {
   }
 
 
-
-  openDialog(crudDialogOption: CrudDialogOption, i:number) {
+  openDialog(crudDialogOption: CrudDialogOption, i: number) {
     let dialogRef = this.dialog.open(ElementDetailsDialogComponent, {
       data: {
         crudDialogOption: crudDialogOption,
-        element:this.element,
-        model:this.model,
-        data:this.data[i],
+        element: this.element,
+        model: this.model,
+        data: this.data[i],
       },
       disableClose: true,
       role: 'dialog'
     });
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
+      if (result === 'cancelled')return
+      switch (result.crudDialogOption) {
+        case 'view' :
+          return
+        case 'add' :
+          this.repository.save(result.element, result.data)
+          break
+        case 'edit' :
+          this.repository.update(result.element, i, result.data)
+          break
+        case 'delete':
+          this.repository.delete(result.element, i)
+          break
+      }
+      this.data = this.repository.getAll(this.element);
     });
   }
 
-  add(i:number) {
+  add(i: number) {
     this.openDialog("add", i)
   }
 
-  view(i:number) {
+  view(i: number) {
     this.openDialog("view", i)
 
   }
 
-  edit(i:number) {
+  edit(i: number) {
     this.openDialog("edit", i)
   }
 
-  delete(i:number) {
+  delete(i: number) {
     this.openDialog("delete", i)
 
   }
