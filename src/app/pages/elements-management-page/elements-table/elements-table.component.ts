@@ -5,6 +5,7 @@ import {TableModel} from './table-model.model';
 import {Repository} from "./repository.service";
 import {ElementDetailsDialogComponent} from "app/pages/elements-management-page/element-details-dialog/element-details-dialog.component";
 import {MdDialog, MdDialogConfig, MdDialogRef} from '@angular/material';
+import {AuthenticationService} from "../../../auth/authentication.service";
 
 export declare type CrudDialogOption = 'view' | 'add' | 'edit' | 'delete';
 
@@ -26,7 +27,8 @@ export class ElementsTableComponent implements OnInit {
               private appEventHolder: AppEventHolder,
               private tableModel: TableModel,
               private repository: Repository,
-              public dialog: MdDialog) {
+              public dialog: MdDialog,
+  private authService: AuthenticationService) {
   }
 
   ngOnInit() {
@@ -43,6 +45,10 @@ export class ElementsTableComponent implements OnInit {
 
 
   openDialog(crudDialogOption: CrudDialogOption, i: number) {
+    if(crudDialogOption!=='view' && this.disableEditingAccess()){
+      alert('Insufficient priviledges')//todo replace with modal
+      return
+    }
     let dialogRef = this.dialog.open(ElementDetailsDialogComponent, {
       data: {
         crudDialogOption: crudDialogOption,
@@ -100,5 +106,10 @@ export class ElementsTableComponent implements OnInit {
     return row[col.colName];
   }
 
+  disableEditingAccess(){
+    let isRestrictedElement= ['medium', 'cover', 'category'].indexOf(this.element)>-1;
+    let hasSpecialRights=this.authService.hasSpecialRights()
+    return isRestrictedElement && ! hasSpecialRights
+  }
 
 }
