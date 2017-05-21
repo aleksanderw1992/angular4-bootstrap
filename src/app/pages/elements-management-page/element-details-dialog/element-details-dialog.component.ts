@@ -24,7 +24,8 @@ export class ElementDetailsDialogComponent {
     this.dialogRef.close(this.data);
   }
 
-  cancel() {
+  cancel(f:any) {
+    console.log(f)
     this.dialogRef.close('cancelled');
   }
 

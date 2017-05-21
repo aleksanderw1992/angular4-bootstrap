@@ -13,7 +13,7 @@
         </td>
         <td>
           <input class="form-control" type="text" [ngModel]="!!data.data===true? data.data[attr.colName]:''"
-                 [readonly]="readonly()" name="{{attr.colName}}"  >
+                 [readonly]="readonly()" name="{{attr.colName}} required"  >
         </td>
       </tr>
       </tbody>
@@ -24,10 +24,10 @@
 <div md-dialog-actions>
   <div class="row">
     <div class="col-sm-6 col-md-5 col-md-offset-1">
-      <button *ngIf="data.crudDialogOption !=='view'" md-button (click)="save(f)">{{confirmButtonText()}}</button>
+      <button class="btn btn-primary" *ngIf="data.crudDialogOption !=='view'" [disabled]="f.form.invalid" md-button (click)="save(f)">{{confirmButtonText()}}</button>
     </div>
     <div class="col-sm-6 col-md-5 col-md-offset-1">
-      <button md-button (click)="cancel()">{{cancelButtonText()}}</button>
+      <button md-button (click)="cancel(f)">{{cancelButtonText()}}</button>
     </div>
   </div>
 </div>
