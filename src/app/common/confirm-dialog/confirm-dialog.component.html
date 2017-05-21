@@ -1,0 +1,16 @@
+<h1 md-dialog-title>{{data.title}}</h1>
+<form #f="ngForm">
+  <div md-dialog-content>
+    {{data.content}}
+  </div>
+  <div md-dialog-actions>
+    <div class="row">
+      <div class="col-sm-6 col-md-5 col-md-offset-1">
+        <button md-button (click)="confirm()">Ok</button>
+      </div>
+      <div class="col-sm-6 col-md-5 col-md-offset-1">
+        <button md-button (click)="close()">Wróć</button>
+      </div>
+    </div>
+  </div>
+</form>

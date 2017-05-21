@@ -1,27 +1,29 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import {HttpModule} from '@angular/http';
 
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { MainPageComponent } from './pages/main-page/main-page.component';
-import { ElementsManagementPageComponent } from './pages/elements-management-page/elements-management-page.component';
-import { ConfigurationManagementPageComponent } from './pages/configuration-management-page/configuration-management-page.component';
-import { AppRoutingModule } from './app-routing.module';
-import { ConfigurationService} from './pages/configuration-management-page/configuration.service';
-import { ElementsTableComponent } from './pages/elements-management-page/elements-table/elements-table.component'
-import { AppEventHolder } from './common/app-events-holder.service'
+import {AppComponent} from './app.component';
+import {HeaderComponent} from './header/header.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {MainPageComponent} from './pages/main-page/main-page.component';
+import {ElementsManagementPageComponent} from './pages/elements-management-page/elements-management-page.component';
+import {ConfigurationManagementPageComponent} from './pages/configuration-management-page/configuration-management-page.component';
+import {AppRoutingModule} from './app-routing.module';
+import {ConfigurationService} from './pages/configuration-management-page/configuration.service';
+import {ElementsTableComponent} from './pages/elements-management-page/elements-table/elements-table.component'
+import {AppEventHolder} from './common/app-events-holder.service'
 import {Repository} from "./pages/elements-management-page/elements-table/repository.service";
-import { ElementDetailsDialogComponent } from './pages/elements-management-page/element-details-dialog/element-details-dialog.component';
+import {ElementDetailsDialogComponent} from './pages/elements-management-page/element-details-dialog/element-details-dialog.component';
 // import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MaterialModule} from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {CountriesHttpProvider} from "./pages/elements-management-page/elements-table/countries-http-provider.service";
 import {AuthenticationService} from "./auth/authentication.service";
-import { LoginDialogComponent } from './auth/login-dialog/login-dialog.component';
+import {LoginDialogComponent} from './auth/login-dialog/login-dialog.component';
+import {AlertDialogComponent} from './common/alert-dialog/alert-dialog.component';
+import {ConfirmDialogComponent} from './common/confirm-dialog/confirm-dialog.component';
 
 
 @NgModule({
@@ -34,6 +36,8 @@ import { LoginDialogComponent } from './auth/login-dialog/login-dialog.component
     ElementsTableComponent,
     ElementDetailsDialogComponent,
     LoginDialogComponent,
+    AlertDialogComponent,
+    ConfirmDialogComponent,
 
   ],
   imports: [
@@ -47,8 +51,9 @@ import { LoginDialogComponent } from './auth/login-dialog/login-dialog.component
     ReactiveFormsModule,
     MaterialModule,
   ],
-  entryComponents:[ElementDetailsDialogComponent, LoginDialogComponent],
+  entryComponents: [ElementDetailsDialogComponent, LoginDialogComponent, AlertDialogComponent, ConfirmDialogComponent],
   providers: [ConfigurationService, AppEventHolder, Repository, CountriesHttpProvider, AuthenticationService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
