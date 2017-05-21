@@ -4,6 +4,7 @@ import {AppEventHolder} from '../common/app-events-holder.service'
 import {AuthenticationService} from "../auth/authentication.service";
 import {MdDialog} from "@angular/material";
 import {LoginDialogComponent} from "../auth/login-dialog/login-dialog.component";
+import {ConfirmDialogComponent} from "../common/confirm-dialog/confirm-dialog.component";
 
 
 @Component({
@@ -58,6 +59,17 @@ export class HeaderComponent {
     });
   }
   logout(){
-    this.authenticationService.logout()
+    let dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      data: {
+        content:'Czy na pewno chcesz się wylogować?'
+      },
+      disableClose: true,
+      role: 'dialog'
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.authenticationService.logout()
+      }
+    });
   }
 }
