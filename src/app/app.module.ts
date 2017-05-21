@@ -20,6 +20,7 @@ import { ElementDetailsDialogComponent } from './pages/elements-management-page/
 import {MaterialModule} from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {CountriesHttpProvider} from "./pages/elements-management-page/elements-table/countries-http-provider.service";
+import {AuthenticationService} from "./auth/authentication.service";
 
 
 @NgModule({
@@ -45,7 +46,7 @@ import {CountriesHttpProvider} from "./pages/elements-management-page/elements-t
     MaterialModule,
   ],
   entryComponents:[ElementDetailsDialogComponent],
-  providers: [ConfigurationService, AppEventHolder, Repository, CountriesHttpProvider],
+  providers: [ConfigurationService, AppEventHolder, Repository, CountriesHttpProvider, AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

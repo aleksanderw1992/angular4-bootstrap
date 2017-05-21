@@ -11,5 +11,12 @@
         <button class="dropdown-item" (click)="onToogle(2)">Konfiguracja aplikacji</button>
       </div>
     </div>
+    <div>
+      <input type="text" readonly="readonly" class="form-control" [value]="authenticatedUser()">
+    </div>
+    <div>
+      <button *ngIf="isAuthenticated()" class="btn btn-default" (click)="logout()">Wyloguj</button>
+      <button *ngIf="!isAuthenticated()" class="btn btn-default" (click)="login()">Zaloguj</button>
+    </div>
   </div>
 </nav>
