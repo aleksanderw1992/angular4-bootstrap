@@ -1,3 +1,8 @@
+<div class="row" *ngIf="disableEditingAccess()">
+  <p>
+    Strona ta wyświetlana jest w trybie tylko do odczytu
+  </p>
+</div>
 <div class="row">
   <div class="col-md-12">
     <button (click)="add()" [disabled]="element==='country'" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Dodaj</button>
