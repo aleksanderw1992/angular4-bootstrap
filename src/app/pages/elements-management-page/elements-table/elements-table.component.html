@@ -18,7 +18,8 @@
     <tbody>
       <tr *ngFor="let row of data; let i = index;">
         <td *ngFor="let col of model.columns">
-          {{row[col.colName]}}
+          <div innerHTML = "{{getTd(row,col)}}"></div>
+          <!--{{getTd(row,col)}}-->
         </td>
         <td>
           <span (click)="view(i)" class="glyphicon glyphicon-eye-open"></span>
