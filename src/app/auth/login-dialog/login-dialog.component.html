@@ -1,0 +1,23 @@
+<h1 md-dialog-title>Zaloguj</h1>
+<form #f="ngForm">
+  <div md-dialog-content>
+    <aside>
+      <p>
+        hint: 'admin' is user with extended privileges
+      </p>
+    </aside>
+    <input type="text" class="form-control" [ngModel]="username" name="username" required>
+  </div>
+  <div md-dialog-actions>
+    <div class="row">
+      <div class="col-sm-6 col-md-5 col-md-offset-1">
+        <button type="submit" class="btn btn-primary" [disabled]="f.form.invalid" md-button (click)="login(f)">
+          Zaloguj
+        </button>
+      </div>
+      <div class="col-sm-6 col-md-5 col-md-offset-1">
+        <button md-button (click)="cancel(f)">Wróć</button>
+      </div>
+    </div>
+  </div>
+</form>

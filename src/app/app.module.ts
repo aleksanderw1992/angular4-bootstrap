@@ -21,6 +21,7 @@ import {MaterialModule} from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {CountriesHttpProvider} from "./pages/elements-management-page/elements-table/countries-http-provider.service";
 import {AuthenticationService} from "./auth/authentication.service";
+import { LoginDialogComponent } from './auth/login-dialog/login-dialog.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import {AuthenticationService} from "./auth/authentication.service";
     ConfigurationManagementPageComponent,
     ElementsTableComponent,
     ElementDetailsDialogComponent,
+    LoginDialogComponent,
 
   ],
   imports: [
@@ -45,7 +47,7 @@ import {AuthenticationService} from "./auth/authentication.service";
     ReactiveFormsModule,
     MaterialModule,
   ],
-  entryComponents:[ElementDetailsDialogComponent],
+  entryComponents:[ElementDetailsDialogComponent, LoginDialogComponent],
   providers: [ConfigurationService, AppEventHolder, Repository, CountriesHttpProvider, AuthenticationService],
   bootstrap: [AppComponent]
 })
