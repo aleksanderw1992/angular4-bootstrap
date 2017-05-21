@@ -4,34 +4,49 @@ export declare type Entity = 'author' | 'category' | 'country' | 'book' | 'mediu
 export class Repository {
   public initialData = {
     author: [
-      { firstName: 'firstName', surname: 'surname', country: 'country'},
-      { firstName: 'asdf', surname: 'vdf', country: 'vtr'}
+      { firstName: 'Aleksander', surname: 'Wojcik', country: 'Poland'},
+      { firstName: 'William', surname: 'Shakespeare', country: 'England'},
+      { firstName: 'J. K.', surname: 'Rowling', country: 'England'},
+      { firstName: 'Stephen', surname: 'King', country: 'USA'},
+      { firstName: 'Fyodor', surname: 'Dostoevsky', country: 'Russia'}
     ],
-    category: [{ name: 'category'}, {name: 'sadf'},],
+    category: [
+      { name: 'drama'},
+      { name: 'comedy'},
+      { name: 'novel'},
+      { name: 'poetry'},
+      { name: 'thriller'},
+      { name: 'horror'},
+    ],
     country: [{ origName: 'origName', flag: 'csd'}, { origName: 'asdf', flag: 'csd'}],
     book: [{
 
-      title: 'asdf',
-      author: 'asdf',
-      isbn: 'asdf',
-      category: 'asdf',
-      medium: 'asdf',
-      cover: 'asdf',
-      price: 'asdf',
-      coverImg: 'asdf',
+      title: 'Romeo and Juliet',
+      author: 'William Shakespeare',
+      isbn: '3456753123',
+      category: 'drama',
+      medium: 'book',
+      cover: 'thick',
+      price: '$20,45',
+      coverImg: '\\assets\\img\\romeo_and_juliet.jpg',
     }, {
 
-      title: 'Really looooooooooooong my awesome title',
-      author: 'asdf',
-      isbn: 'asdf',
-      category: 'asdf',
-      medium: 'asdf',
-      cover: 'asdf',
-      price: 'asdf',
-      coverImg: 'asdf',
+      title: 'Harry Potter',
+      author: 'J. K. Rowling',
+      isbn: '3256753123',
+      category: 'novel',
+      medium: 'book',
+      cover: 'thin',
+      price: '$10,45',
+      coverImg: '\\assets\\img\\hp.png',
     },],
-    medium: [{ name: 'vdsdd'}],
-    cover: [{ name: 'asdf'}],
+    medium: [
+      { name: 'book'},
+      { name: 'pdf'},
+      { name: 'mobi'},
+      { name: 'online'},
+      ],
+    cover: [{ name: 'thick'},{ name: 'thin'},{ name: 'none'}],
   };
 
   constructor(){
