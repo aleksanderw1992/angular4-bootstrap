@@ -7,23 +7,28 @@ export class CountriesHttpProvider {
   countries: any;
 
   constructor(private http: Http) {
+    this.initCountries();
   }
 
   getCountries() {
     if (this.countries && this.countries.length) {
       return this.countries;
     }
+    this.initCountries();
+    return this.countries;
+  }
+
+  private initCountries() {
     let observable = this.http.get(this.countriesUrl).map(res => <Country[]>res.json());
     observable.subscribe((e) => {
       this.countries = e.map((country) => {
           return {
             flag: country.flag,
-             origName: country.name
+            origName: country.name
           };
         }
       );
-    })
-    return this.countries;
+    });
   }
 }
 
