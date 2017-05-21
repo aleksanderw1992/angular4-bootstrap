@@ -6,6 +6,7 @@ import {Repository} from "./repository.service";
 import {ElementDetailsDialogComponent} from "app/pages/elements-management-page/element-details-dialog/element-details-dialog.component";
 import {MdDialog, MdDialogConfig, MdDialogRef} from '@angular/material';
 import {AuthenticationService} from "../../../auth/authentication.service";
+import {AlertDialogComponent} from "../../../common/alert-dialog/alert-dialog.component";
 
 export declare type CrudDialogOption = 'view' | 'add' | 'edit' | 'delete';
 
@@ -46,7 +47,16 @@ export class ElementsTableComponent implements OnInit {
 
   openDialog(crudDialogOption: CrudDialogOption, i: number) {
     if(crudDialogOption!=='view' && this.disableEditingAccess()){
-      alert('Insufficient priviledges')//todo replace with modal
+      let dialogRef = this.dialog.open(AlertDialogComponent, {
+        data: {
+          content:'Nie masz wystarczających uprawnień'
+        },
+        disableClose: true,
+        role: 'dialog'
+      });
+      dialogRef.afterClosed().subscribe(result => {
+        return
+      });
       return
     }
     let dialogRef = this.dialog.open(ElementDetailsDialogComponent, {
