@@ -1,6 +1,8 @@
+import {Injectable} from "@angular/core";
+import {CountriesHttpProvider} from "./countries-http-provider.service";
 export declare type Entity = 'author' | 'category' | 'country' | 'book' | 'medium' | 'cover';
 
-
+@Injectable()
 export class Repository {
   public initialData = {
     author: [
@@ -49,7 +51,7 @@ export class Repository {
     cover: [{ name: 'thick'},{ name: 'thin'},{ name: 'none'}],
   };
 
-  constructor(){
+  constructor(private countriesHttpProvider:CountriesHttpProvider){
     this.init()
   }
   init() {
@@ -62,6 +64,11 @@ export class Repository {
   }
 
   getAll(element: string) {
+    if(element === 'country'){
+      let countries = this.countriesHttpProvider.getCountries();
+      console.log(countries);
+      return countries || [];
+    }
     let objectArrayToArray = function(obj){
       let arr=[]
       Object.keys(obj).forEach(e =>arr[+e]=obj[e])

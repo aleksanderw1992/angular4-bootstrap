@@ -19,6 +19,7 @@ import { ElementDetailsDialogComponent } from './pages/elements-management-page/
 // import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MaterialModule} from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {CountriesHttpProvider} from "./pages/elements-management-page/elements-table/countries-http-provider.service";
 
 
 @NgModule({
@@ -44,7 +45,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     MaterialModule,
   ],
   entryComponents:[ElementDetailsDialogComponent],
-  providers: [ConfigurationService, AppEventHolder, Repository],
+  providers: [ConfigurationService, AppEventHolder, Repository, CountriesHttpProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
