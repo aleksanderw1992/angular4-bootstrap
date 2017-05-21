@@ -1,8 +1,10 @@
 <div class="row">
   <div class="col-md-12">
-    <button (click)="add()" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Dodaj</button>
+    <button (click)="add()" [disabled]="element==='country'" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Dodaj</button>
   </div>
 </div>
+<div class="row">
+
 <div class="row">
   <table class="table table-responsive">
     <thead>
@@ -22,9 +24,9 @@
           <!--{{getTd(row,col)}}-->
         </td>
         <td>
-          <span (click)="view(i)" class="glyphicon glyphicon-eye-open"></span>
-          <span (click)="edit(i)" class="glyphicon glyphicon-edit"></span>
-          <span (click)="delete(i)" class="glyphicon glyphicon-remove"></span>
+          <span (click)="view(i)"  class="glyphicon glyphicon-eye-open"></span>
+          <span (click)="edit(i)" *ngIf="element!=='country'" class="glyphicon glyphicon-edit"></span>
+          <span (click)="delete(i)" *ngIf="element!=='country'" class="glyphicon glyphicon-remove"></span>
         </td>
       </tr>
     </tbody>

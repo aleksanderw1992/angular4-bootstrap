@@ -89,6 +89,10 @@ export class ElementsTableComponent implements OnInit {
     this.openDialog("delete", i)
   }
   getTd(row, col){
+    if (this.element ==='country' && col.colName==='flag' ){
+      let imgPath = row[col.colName];
+      return '<img alt="flag" height="50px" width="50px" src="'+imgPath+'">'
+    }
     if (this.element ==='book' && col.colName==='coverImg' ){
       let imgPath = row[col.colName];
       return '<img alt="book cover" height="50px" width="50px" src="'+imgPath+'">'

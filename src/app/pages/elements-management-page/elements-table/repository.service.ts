@@ -66,7 +66,7 @@ export class Repository {
   getAll(element: string) {
     if(element === 'country'){
       let countries = this.countriesHttpProvider.getCountries();
-      console.log(countries);
+      // console.log(countries);
       return countries || [];
     }
     let objectArrayToArray = function(obj){
