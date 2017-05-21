@@ -9,7 +9,7 @@ import { AppEventHolder } from '../common/app-events-holder.service'
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  logoPath='\\assets\\img\\logocompany.png'
+  logoPath='\\assets\\img\\boss.jpg'
 
   dropdownLabels:Array<{id:string, name:string, route:string}> = [
     {id:'main',name:'Strona główna',route:'/main'},
