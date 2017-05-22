@@ -18,5 +18,8 @@
       <button *ngIf="isAuthenticated()" class="btn btn-default" (click)="logout()">Wyloguj</button>
       <button *ngIf="!isAuthenticated()" class="btn btn-default" (click)="login()">Zaloguj</button>
     </div>
+    <div>
+      <button class="btn btn-danger" (click)="clear()">Clear local storage - dev mode</button>
+    </div>
   </div>
 </nav>

@@ -5,10 +5,11 @@
 </div>
 <div class="row">
   <div class="col-md-12">
-    <button (click)="add()" [disabled]="element==='country'" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Dodaj</button>
+    <button (click)="add()" [disabled]="element==='country'" class="btn btn-primary"><span
+      class="glyphicon glyphicon-plus"></span> Dodaj
+    </button>
   </div>
 </div>
-<div class="row">
 
 <div class="row">
   <table class="table table-responsive">
@@ -23,18 +24,18 @@
     </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let row of data; let i = index;">
-        <td *ngFor="let col of model.columns">
-          <div innerHTML = "{{getTd(row,col)}}"></div>
-          <!--{{getTd(row,col)}}-->
-        </td>
-        <td>
-          <span (click)="view(i)"  class="glyphicon glyphicon-eye-open"></span>
-          <span (click)="order(i)" *ngIf="element==='book'"  class="glyphicon glyphicon-shopping-cart"></span>
-          <span (click)="edit(i)" *ngIf="element!=='country'" class="glyphicon glyphicon-edit"></span>
-          <span (click)="delete(i)" *ngIf="element!=='country'" class="glyphicon glyphicon-remove"></span>
-        </td>
-      </tr>
+    <tr *ngFor="let row of data; let i = index;">
+      <td *ngFor="let col of model.columns">
+        <div innerHTML="{{getTd(row,col)}}"></div>
+        <!--{{getTd(row,col)}}-->
+      </td>
+      <td>
+        <span (click)="view(i)" class="glyphicon glyphicon-eye-open"></span>
+        <span (click)="order(i)" *ngIf="element==='book'" class="glyphicon glyphicon-shopping-cart"></span>
+        <span (click)="edit(i)" *ngIf="element!=='country'" class="glyphicon glyphicon-edit"></span>
+        <span (click)="delete(i)" *ngIf="element!=='country'" class="glyphicon glyphicon-remove"></span>
+      </td>
+    </tr>
     </tbody>
   </table>
 </div>

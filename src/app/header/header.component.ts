@@ -72,4 +72,8 @@ export class HeaderComponent {
       }
     });
   }
+  clear(){
+    window.localStorage.clear()
+    window.location.reload(true)
+  }
 }
