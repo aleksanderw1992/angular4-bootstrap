@@ -8,7 +8,7 @@ import {MainPageComponent} from './pages/main-page/main-page.component'
 
 const appRoutes: Routes = [
   { path: 'main', component: MainPageComponent },
-  { path: 'elemets', component: ElementsManagementPageComponent, children: [
+  { path: 'elements', component: ElementsManagementPageComponent, children: [
     { path: ':element-name', component: ElementsTableComponent}
   ] },
   { path: 'configuration', component: ConfigurationManagementPageComponent },

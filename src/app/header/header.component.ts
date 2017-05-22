@@ -17,7 +17,7 @@ export class HeaderComponent {
 
   dropdownLabels: Array<{ id: string, name: string, route: string }> = [
     {id: 'main', name: 'Strona główna', route: '/main'},
-    {id: 'elemets', name: 'Zarządzanie elementami', route: '/elemets'},
+    {id: 'elements', name: 'Zarządzanie elementami', route: '/elements'},
     {id: 'configuration', name: 'Konfiguracja aplikacji', route: '/configuration'}
   ];
   selectedPage: string = this.dropdownLabels[0].name;
