@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Repository} from "../elements-management-page/elements-table/repository.service";
 
 @Component({
   selector: 'app-main-page',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent implements OnInit {
-
-  constructor() { }
+  constructor(              private repository: Repository,
+  ) { }
 
   ngOnInit() {
+  }
+
+  getOrderBooks() {
+   return this.repository.getAll('orderedBook')
   }
 
 }

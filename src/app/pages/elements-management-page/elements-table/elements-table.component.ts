@@ -121,5 +121,18 @@ export class ElementsTableComponent implements OnInit {
     let hasSpecialRights=this.authService.hasSpecialRights()
     return isRestrictedElement && ! hasSpecialRights
   }
+  order(i: number){
+    this.repository.addSingleOrder(i)
+    let dialogRef = this.dialog.open(AlertDialogComponent, {
+      data: {
+        content:'Dodano jeden egzemplarz książki do koszyka'
+      },
+      disableClose: true,
+      role: 'dialog'
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      return
+    });
+  }
 
 }

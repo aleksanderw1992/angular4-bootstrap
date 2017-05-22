@@ -1,3 +1,26 @@
-<h1>
-  woot
-</h1>
+<div class="container">
+
+  <div class="row">
+    <p>Najczęściej kupowane książki</p>
+  </div>
+  <div class="row">
+    <table class="table table-responsive">
+      <thead>
+      <tr>
+        <th>
+          BookId
+        </th>
+        <th>
+          OrderCount
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let row of getOrderBooks(); let i = index;">
+        <td>{{''+row.bookId}}</td>
+        <td>{{''+row.orderCount}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -30,6 +30,7 @@
         </td>
         <td>
           <span (click)="view(i)"  class="glyphicon glyphicon-eye-open"></span>
+          <span (click)="order(i)" *ngIf="element==='book'"  class="glyphicon glyphicon-shopping-cart"></span>
           <span (click)="edit(i)" *ngIf="element!=='country'" class="glyphicon glyphicon-edit"></span>
           <span (click)="delete(i)" *ngIf="element!=='country'" class="glyphicon glyphicon-remove"></span>
         </td>
