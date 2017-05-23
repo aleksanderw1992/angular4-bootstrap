@@ -1,6 +1,6 @@
 <nav class="navbar navbar-default">
   <div class="container">
-    <div class="navbar-header" >
+    <div class="navbar-header">
       <img [src]="logoPath" alt="company logo" width="100px" height="100px">
     </div>
     <div class="collapse navbar-collapse">
@@ -14,16 +14,16 @@
           </ul>
         </li>
       </ul>
-    </div>
-    <div>
-      <input type="text" readonly="readonly" class="form-control" [value]="authenticatedUser()">
-    </div>
-    <div>
-      <button *ngIf="isAuthenticated()" class="btn btn-default" (click)="logout()">Wyloguj</button>
-      <button *ngIf="!isAuthenticated()" class="btn btn-default" (click)="login()">Zaloguj</button>
-    </div>
-    <div>
-      <button class="btn btn-danger" (click)="clear()">Clear local storage - dev mode</button>
+      <div class="nav navbar-nav">
+        <input type="text" readonly="readonly" class="form-control" [value]="authenticatedUser()">
+      </div>
+      <div class="nav navbar-nav">
+        <button *ngIf="isAuthenticated()" class="btn btn-default" (click)="logout()">Wyloguj</button>
+        <button *ngIf="!isAuthenticated()" class="btn btn-default" (click)="login()">Zaloguj</button>
+      </div>
+      <div class="nav navbar-nav">
+        <button class="btn btn-danger" (click)="clear()">Clear local storage</button>
+      </div>
     </div>
   </div>
 </nav>
