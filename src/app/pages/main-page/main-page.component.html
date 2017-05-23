@@ -8,16 +8,16 @@
       <thead>
       <tr>
         <th>
-          BookId
+          Nazwa książki
         </th>
         <th>
-          OrderCount
+          Ilość zamówionych egzemplarzy
         </th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let row of getOrderBooks(); let i = index;">
-        <td>{{''+row.bookId}}</td>
+        <td>{{''+row.bookTitle}}</td>
         <td>{{''+row.orderCount}}</td>
       </tr>
       </tbody>
