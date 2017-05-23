@@ -3,13 +3,17 @@
     <div class="navbar-header" >
       <img [src]="logoPath" alt="company logo" width="100px" height="100px">
     </div>
-    <div ngbDropdown >
-      <button class="btn btn-outline-primary" id="dropdownMenu1" ngbDropdownToggle>{{selectedPage}}</button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <button class="dropdown-item" (click)="onToogle(0)">Strona główna</button>
-        <button class="dropdown-item" (click)="onToogle(1)">Zarządzanie elementami</button>
-        <button class="dropdown-item" (click)="onToogle(2)">Konfiguracja aplikacji</button>
-      </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown" appDropdown>
+          <a style="cursor: pointer;" class="dropdown-toggle" role="button">{{selectedPage}} <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a style="cursor: pointer;" (click)="onToogle(0)">Strona główna</a></li>
+            <li><a style="cursor: pointer;" (click)="onToogle(1)">Zarządzanie elementami</a></li>
+            <li><a style="cursor: pointer;" (click)="onToogle(2)">Konfiguracja aplikacji</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
     <div>
       <input type="text" readonly="readonly" class="form-control" [value]="authenticatedUser()">

@@ -24,6 +24,7 @@ import {AuthenticationService} from "./auth/authentication.service";
 import {LoginDialogComponent} from './auth/login-dialog/login-dialog.component';
 import {AlertDialogComponent} from './common/alert-dialog/alert-dialog.component';
 import {ConfirmDialogComponent} from './common/confirm-dialog/confirm-dialog.component';
+import {DropdownDirective} from "./common/directives/dropdown.directive";
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import {ConfirmDialogComponent} from './common/confirm-dialog/confirm-dialog.com
     LoginDialogComponent,
     AlertDialogComponent,
     ConfirmDialogComponent,
+    DropdownDirective
 
   ],
   imports: [
