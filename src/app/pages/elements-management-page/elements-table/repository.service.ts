@@ -32,7 +32,6 @@ export class Repository {
       price: '$20,45',
       coverImg: '\\assets\\img\\romeo_and_juliet.jpg',
     }, {
-
       title: 'Harry Potter',
       author: 'J. K. Rowling',
       isbn: '3256753123',
@@ -41,7 +40,44 @@ export class Repository {
       cover: 'thin',
       price: '$10,45',
       coverImg: '\\assets\\img\\hp.png',
-    },],
+    }, {
+      title: 'Robinson Crusoe',
+      author: 'Daniel Defoe',
+      isbn: '3256753113',
+      category: 'novel',
+      medium: 'book',
+      cover: 'thin',
+      price: '$11,45',
+      coverImg: '\\assets\\img\\robbinson_cruso.jpg',
+    },{
+      title: 'Frankenstein ',
+      author: 'Mary Shelley ',
+      isbn: '3456753113',
+      category: 'novel',
+      medium: 'book',
+      cover: 'thin',
+      price: '$11,45',
+      coverImg: '\\assets\\img\\frankenstein.jpg',
+    },{
+      title: 'Odyssey ',
+      author: 'Homer',
+      isbn: '3226752113',
+      category: 'novel',
+      medium: 'book',
+      cover: 'thin',
+      price: '$21,45',
+      coverImg: '\\assets\\img\\oddysei.jpg',
+    },{
+      title: 'Pride and Prejudice ',
+      author: 'Jane Austen',
+      isbn: '3256722113',
+      category: 'novel',
+      medium: 'book',
+      cover: 'thin',
+      price: '$11,10',
+      coverImg: '\\assets\\img\\pride_and_prejudice.jpg',
+    },
+    ],
     medium: [
       {name: 'book'},
       {name: 'pdf'},
@@ -50,7 +86,10 @@ export class Repository {
     ],
     cover: [{name: 'thick'}, {name: 'thin'}, {name: 'none'}],
     orderedBook: [
-      {bookId: 0, orderCount: 2}
+      {bookId: 0, orderCount: 2},
+      {bookId: 1, orderCount: 1},
+      {bookId: 2, orderCount: 10},
+      {bookId: 3, orderCount: 3},
     ]
   };
 

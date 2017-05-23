@@ -14,7 +14,8 @@ export class MainPageComponent implements OnInit {
   }
 
   getOrderBooks() {
-    return this.repository.getAll('orderedBook')
+    let books = this.repository.getAll('orderedBook');
+    return books.sort((a,b)=>b.orderCount-a.orderCount||a.bookId-b.bookId).slice(0,3);
   }
 
 }
