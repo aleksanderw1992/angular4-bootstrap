@@ -49,6 +49,8 @@
     <option>50</option>
   </select>
   <p>
-    Page 1 of {{getPage()}}
+    Page   <select [disabled]="getMaxPage()===1">
+    <option *ngFor="let i of getSelectArray()">{{i}}</option>
+  </select> of {{getMaxPage()}}
   </p>
 </div>

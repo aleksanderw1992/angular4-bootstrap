@@ -209,8 +209,13 @@ export class ElementsTableComponent implements OnInit {
       }
     }
   }
-  getPage(){
+  getMaxPage(){
     let rowCount = this.data.filter(e=>e).length;
     return Math.floor(rowCount/ this.elemOnPage)+1
+  }
+  getSelectArray(){
+    let arr=(<any>Array(this.getMaxPage())).fill().map((x,i)=>i+1)
+    // console.log(arr);
+    return arr
   }
 }
