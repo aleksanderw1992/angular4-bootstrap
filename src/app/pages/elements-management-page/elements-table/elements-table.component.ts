@@ -61,6 +61,7 @@ export class ElementsTableComponent implements OnInit {
   data: Array<any>;
   sortType: SortType = new SortType();
   sortedCol: any;
+  elemOnPage:number=5;
 
   constructor(private route: ActivatedRoute,
               private appEventHolder: AppEventHolder,
@@ -207,5 +208,9 @@ export class ElementsTableComponent implements OnInit {
         }
       }
     }
+  }
+  getPage(){
+    let rowCount = this.data.filter(e=>e).length;
+    return Math.floor(rowCount/ this.elemOnPage)+1
   }
 }

@@ -40,3 +40,15 @@
     </tbody>
   </table>
 </div>
+<div class="row">
+  <select [(ngModel)]="elemOnPage">
+    <option>5</option>
+    <option>10</option>
+    <option>15</option>
+    <option>20</option>
+    <option>50</option>
+  </select>
+  <p>
+    Page 1 of {{getPage()}}
+  </p>
+</div>
