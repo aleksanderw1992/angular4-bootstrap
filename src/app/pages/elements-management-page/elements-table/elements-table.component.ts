@@ -27,14 +27,24 @@ export class SortType {
   }
   getSortFactor():number {
     switch (this._currentType){
-      case 'none':
-        return 0
       case 'asc':
         return 1
       case 'desc':
         return -1
     }
     return 0
+  }
+  getClass():string {
+    switch (this._currentType){
+      case 'asc':
+        return 'glyphicon glyphicon-sort-by-attributes'
+      case 'desc':
+        return 'glyphicon glyphicon-sort-by-attributes-alt'
+    }
+    return ''
+  }
+  isNotNone(){
+    return this._currentType!=='none';
   }
 }
 
@@ -176,7 +186,7 @@ export class ElementsTableComponent implements OnInit {
         });
       }
     });
-    if(this.sortedCol && this.sortType.currentType()!=='none'){
+    if(this.sortedCol && this.sortType.isNotNone()){
       arr.sort((a,b)=>{return this.sortType.getSortFactor()*(a.data[this.sortedCol.colName].localeCompare(b.data[this.sortedCol.colName]))})
     }
     return arr

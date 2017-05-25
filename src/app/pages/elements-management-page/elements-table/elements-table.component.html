@@ -17,6 +17,7 @@
     <tr>
       <th *ngFor="let col of model.columns" (click)="sort(col)">
         {{col.value}}
+        <span *ngIf="sortType.isNotNone() && sortedCol === col" [class]="sortType.getClass()"></span>
       </th>
       <th>
         Akcja
