@@ -24,16 +24,16 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let row of data; let i = index;">
+    <tr *ngFor="let row of getData()">
       <td *ngFor="let col of model.columns">
-        <div innerHTML="{{getTd(row,col)}}"></div>
+        <div innerHTML="{{getTd(row.data,col)}}"></div>
         <!--{{getTd(row,col)}}-->
       </td>
       <td>
-        <span (click)="view(i)" class="glyphicon glyphicon-eye-open"></span>
-        <span (click)="order(i)" *ngIf="element==='book'" class="glyphicon glyphicon-shopping-cart"></span>
-        <span (click)="edit(i)" *ngIf="element!=='country'" class="glyphicon glyphicon-edit"></span>
-        <span (click)="delete(i)" *ngIf="element!=='country'" class="glyphicon glyphicon-remove"></span>
+        <span (click)="view(row.i)" class="glyphicon glyphicon-eye-open"></span>
+        <span (click)="order(row.i)" *ngIf="element==='book'" class="glyphicon glyphicon-shopping-cart"></span>
+        <span (click)="edit(row.i)" *ngIf="element!=='country'" class="glyphicon glyphicon-edit"></span>
+        <span (click)="delete(row.i)" *ngIf="element!=='country'" class="glyphicon glyphicon-remove"></span>
       </td>
     </tr>
     </tbody>

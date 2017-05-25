@@ -1,10 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Params, Router} from '@angular/router';
-import {AppEventHolder} from '../../../common/app-events-holder.service'
-import {TableModel} from '../elements-domain/table-model.model';
+import {Component, OnInit} from "@angular/core";
+import {ActivatedRoute, Params} from "@angular/router";
+import {AppEventHolder} from "../../../common/app-events-holder.service";
+import {TableModel} from "../elements-domain/table-model.model";
 import {Repository} from "../elements-domain/repository.service";
 import {ElementDetailsDialogComponent} from "app/pages/elements-management-page/element-details-dialog/element-details-dialog.component";
-import {MdDialog, MdDialogConfig, MdDialogRef} from '@angular/material';
+import {MdDialog} from "@angular/material";
 import {AuthenticationService} from "../../../auth/authentication.service";
 import {AlertDialogComponent} from "../../../common/alert-dialog/alert-dialog.component";
 
@@ -23,7 +23,7 @@ export class ElementsTableComponent implements OnInit {
   data: Array<any>;
 
 
-  constructor(private router: Router,
+  constructor(
               private route: ActivatedRoute,
               private appEventHolder: AppEventHolder,
               private tableModel: TableModel,
@@ -54,7 +54,8 @@ export class ElementsTableComponent implements OnInit {
         disableClose: true,
         role: 'dialog'
       });
-      dialogRef.afterClosed().subscribe(result => {
+      dialogRef.afterClosed().subscribe(() => {
+        this.data = this.repository.getAll(this.element);
         return
       });
       return
@@ -64,7 +65,7 @@ export class ElementsTableComponent implements OnInit {
         crudDialogOption: crudDialogOption,
         element: this.element,
         model: this.model,
-        data: this.data[i],
+        data: this.getData().filter(e=>e.i===i)[0].data,
       },
       disableClose: true,
       role: 'dialog'
@@ -122,6 +123,7 @@ export class ElementsTableComponent implements OnInit {
     return isRestrictedElement && ! hasSpecialRights
   }
   order(i: number){
+    console.log('i + '+i)
     this.repository.addSingleOrder(i)
     let dialogRef = this.dialog.open(AlertDialogComponent, {
       data: {
@@ -130,9 +132,20 @@ export class ElementsTableComponent implements OnInit {
       disableClose: true,
       role: 'dialog'
     });
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe(() => {
       return
     });
   }
-
+  getData(){
+    let arr=[]
+    this.data.forEach((e, ind)=>{
+      if(e){
+        arr.push({
+          i: ind,
+          data:e
+        });
+      }
+    });
+    return arr
+  }
 }
