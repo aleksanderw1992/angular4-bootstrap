@@ -65,7 +65,7 @@ export class ElementsTableComponent implements OnInit {
         crudDialogOption: crudDialogOption,
         element: this.element,
         model: this.model,
-        data: this.getData().filter(e=>e.i===i)[0].data,
+        data: crudDialogOption!=='add' && this.getData().filter(e=>e.i===i)[0].data,
       },
       disableClose: true,
       role: 'dialog'
@@ -123,7 +123,6 @@ export class ElementsTableComponent implements OnInit {
     return isRestrictedElement && ! hasSpecialRights
   }
   order(i: number){
-    console.log('i + '+i)
     this.repository.addSingleOrder(i)
     let dialogRef = this.dialog.open(AlertDialogComponent, {
       data: {
