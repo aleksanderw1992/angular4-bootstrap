@@ -16,13 +16,17 @@ export class MainPageComponent implements OnInit {
   getOrderBooks() {
     let books = this.repository.getAll('orderedBook');
     let booksMaxThree = books.sort((a, b)=>b.orderCount-a.orderCount||a.bookId-b.bookId).slice(0,3);
-    return booksMaxThree.map(e => {
-      let book = this.repository.get("book", e.bookId);
-      return {
-        bookTitle: book.title,
-        orderCount: e.orderCount
+    let arr=[]
+    booksMaxThree.forEach((e)=>{
+      if(e){
+        let book = this.repository.get("book", e.bookId);
+        arr.push({
+          bookTitle: book.title,
+          orderCount: e.orderCount
+        });
       }
     });
+    return arr
   }
 
 }
