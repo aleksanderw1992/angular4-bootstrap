@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {AppEventHolder} from '../../../common/app-events-holder.service'
-import {TableModel} from './table-model.model';
-import {Repository} from "./repository.service";
+import {TableModel} from '../elements-domain/table-model.model';
+import {Repository} from "../elements-domain/repository.service";
 import {ElementDetailsDialogComponent} from "app/pages/elements-management-page/element-details-dialog/element-details-dialog.component";
 import {MdDialog, MdDialogConfig, MdDialogRef} from '@angular/material';
 import {AuthenticationService} from "../../../auth/authentication.service";

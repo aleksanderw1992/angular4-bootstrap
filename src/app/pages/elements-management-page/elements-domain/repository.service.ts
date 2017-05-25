@@ -1,5 +1,6 @@
 import {Injectable} from "@angular/core";
 import {CountriesHttpProvider} from "./countries-http-provider.service";
+import {SequenceHolder} from "./sequence-holder.service";
 export declare type Entity = 'author' | 'category' | 'country' | 'book' | 'medium' | 'cover' | 'orderedBook';
 
 @Injectable()
@@ -93,7 +94,7 @@ export class Repository {
     ]
   };
 
-  constructor(private countriesHttpProvider: CountriesHttpProvider) {
+  constructor(private countriesHttpProvider: CountriesHttpProvider, private sequenceHolder: SequenceHolder) {
     localStorage.book || this.init()
   }
 
@@ -131,7 +132,7 @@ export class Repository {
       localStorage[entity] = JSON.stringify({})
     }
     let localStorageEntity = JSON.parse(localStorage[entity]);
-    let nextId = Object.keys(localStorageEntity).length;
+    let nextId = this.sequenceHolder.get(entity).getAndIncrease();
     localStorageEntity[nextId] = data;
     localStorage[entity] = JSON.stringify(localStorageEntity)
   }

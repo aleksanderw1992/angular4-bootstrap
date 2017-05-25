@@ -14,17 +14,18 @@ import {AppRoutingModule} from './app-routing.module';
 import {ConfigurationService} from './pages/configuration-management-page/configuration.service';
 import {ElementsTableComponent} from './pages/elements-management-page/elements-table/elements-table.component'
 import {AppEventHolder} from './common/app-events-holder.service'
-import {Repository} from "./pages/elements-management-page/elements-table/repository.service";
+import {Repository} from "./pages/elements-management-page/elements-domain/repository.service";
 import {ElementDetailsDialogComponent} from './pages/elements-management-page/element-details-dialog/element-details-dialog.component';
 // import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MaterialModule} from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {CountriesHttpProvider} from "./pages/elements-management-page/elements-table/countries-http-provider.service";
+import {CountriesHttpProvider} from "./pages/elements-management-page/elements-domain/countries-http-provider.service";
 import {AuthenticationService} from "./auth/authentication.service";
 import {LoginDialogComponent} from './auth/login-dialog/login-dialog.component';
 import {AlertDialogComponent} from './common/alert-dialog/alert-dialog.component';
 import {ConfirmDialogComponent} from './common/confirm-dialog/confirm-dialog.component';
 import {DropdownDirective} from "./common/directives/dropdown.directive";
+import {SequenceHolder} from "app/pages/elements-management-page/elements-domain/sequence-holder.service";
 
 
 @NgModule({
@@ -54,7 +55,7 @@ import {DropdownDirective} from "./common/directives/dropdown.directive";
     MaterialModule,
   ],
   entryComponents: [ElementDetailsDialogComponent, LoginDialogComponent, AlertDialogComponent, ConfirmDialogComponent],
-  providers: [ConfigurationService, AppEventHolder, Repository, CountriesHttpProvider, AuthenticationService],
+  providers: [ConfigurationService, AppEventHolder, Repository, CountriesHttpProvider, AuthenticationService, SequenceHolder],
   bootstrap: [AppComponent]
 })
 export class AppModule {
