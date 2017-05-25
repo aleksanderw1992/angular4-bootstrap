@@ -9,6 +9,23 @@ import {AuthenticationService} from "../../../auth/authentication.service";
 import {AlertDialogComponent} from "../../../common/alert-dialog/alert-dialog.component";
 
 export declare type CrudDialogOption = 'view' | 'add' | 'edit' | 'delete';
+export class SortType {
+  private _types: Array<string> = ['none', 'asc', 'desc'];
+  private _currentType: string = 'none';
+
+  currentType(): string {
+    return this._currentType;
+  }
+
+  next() {
+    let nextIndex: number = (this._types.indexOf(this._currentType) + 1) % 3;
+    this._currentType = this._types[nextIndex] as string
+  }
+
+  resetAndNext() {
+    this._currentType = 'asc'
+  }
+}
 
 
 @Component({
@@ -21,15 +38,15 @@ export class ElementsTableComponent implements OnInit {
   element = '';
   model: any;
   data: Array<any>;
+  sortType: SortType = new SortType();
+  sortedCol: any;
 
-
-  constructor(
-              private route: ActivatedRoute,
+  constructor(private route: ActivatedRoute,
               private appEventHolder: AppEventHolder,
               private tableModel: TableModel,
               private repository: Repository,
               public dialog: MdDialog,
-  private authService: AuthenticationService) {
+              private authService: AuthenticationService) {
   }
 
   ngOnInit() {
@@ -46,10 +63,10 @@ export class ElementsTableComponent implements OnInit {
 
 
   openDialog(crudDialogOption: CrudDialogOption, i: number) {
-    if(crudDialogOption!=='view' && this.disableEditingAccess()){
+    if (crudDialogOption !== 'view' && this.disableEditingAccess()) {
       let dialogRef = this.dialog.open(AlertDialogComponent, {
         data: {
-          content:'Nie masz wystarczających uprawnień'
+          content: 'Nie masz wystarczających uprawnień'
         },
         disableClose: true,
         role: 'dialog'
@@ -65,7 +82,7 @@ export class ElementsTableComponent implements OnInit {
         crudDialogOption: crudDialogOption,
         element: this.element,
         model: this.model,
-        data: crudDialogOption!=='add' && this.getData().filter(e=>e.i===i)[0].data,
+        data: crudDialogOption !== 'add' && this.getData().filter(e => e.i === i)[0].data,
       },
       disableClose: true,
       role: 'dialog'
@@ -105,28 +122,30 @@ export class ElementsTableComponent implements OnInit {
   delete(i: number) {
     this.openDialog("delete", i)
   }
-  getTd(row, col){
-    if (this.element ==='country' && col.colName==='flag' ){
+
+  getTd(row, col) {
+    if (this.element === 'country' && col.colName === 'flag') {
       let imgPath = row[col.colName];
-      return '<img alt="flag" height="50px" width="50px" src="'+imgPath+'">'
+      return '<img alt="flag" height="50px" width="50px" src="' + imgPath + '">'
     }
-    if (this.element ==='book' && col.colName==='coverImg' ){
+    if (this.element === 'book' && col.colName === 'coverImg') {
       let imgPath = row[col.colName];
-      return '<img alt="book cover" height="50px" width="50px" src="'+imgPath+'">'
+      return '<img alt="book cover" height="50px" width="50px" src="' + imgPath + '">'
     }
     return row[col.colName];
   }
 
-  disableEditingAccess(){
-    let isRestrictedElement= ['medium', 'cover', 'category'].indexOf(this.element)>-1;
-    let hasSpecialRights=this.authService.hasSpecialRights()
-    return isRestrictedElement && ! hasSpecialRights
+  disableEditingAccess() {
+    let isRestrictedElement = ['medium', 'cover', 'category'].indexOf(this.element) > -1;
+    let hasSpecialRights = this.authService.hasSpecialRights()
+    return isRestrictedElement && !hasSpecialRights
   }
-  order(i: number){
+
+  order(i: number) {
     this.repository.addSingleOrder(i)
     let dialogRef = this.dialog.open(AlertDialogComponent, {
       data: {
-        content:'Dodano jeden egzemplarz książki do koszyka'
+        content: 'Dodano jeden egzemplarz książki do koszyka'
       },
       disableClose: true,
       role: 'dialog'
@@ -135,16 +154,34 @@ export class ElementsTableComponent implements OnInit {
       return
     });
   }
-  getData(){
-    let arr=[]
-    this.data.forEach((e, ind)=>{
-      if(e){
+
+  getData() {
+    let arr = []
+    this.data.forEach((e, ind) => {
+      if (e) {
         arr.push({
           i: ind,
-          data:e
+          data: e
         });
       }
     });
     return arr
+  }
+
+  sort(a) {
+    if (!a.notSortable) {
+      if (!this.sortedCol) {
+        this.sortedCol = a
+        this.sortType.next()
+      } else {
+        let sameCol = a === this.sortedCol;
+        if (sameCol) {
+          this.sortType.next()
+        } else {
+          this.sortType.resetAndNext()
+          this.sortedCol = a
+        }
+      }
+    }
   }
 }

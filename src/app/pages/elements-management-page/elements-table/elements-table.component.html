@@ -15,7 +15,7 @@
   <table class="table table-responsive">
     <thead>
     <tr>
-      <th *ngFor="let col of model.columns">
+      <th *ngFor="let col of model.columns" (click)="sort(col)">
         {{col.value}}
       </th>
       <th>

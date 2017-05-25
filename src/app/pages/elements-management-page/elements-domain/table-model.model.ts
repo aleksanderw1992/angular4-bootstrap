@@ -16,7 +16,7 @@ export class TableModel{
     country:{
       columns:[
         {colName:'origName', value:'Nazwa w j. oryginalnym'},
-        {colName:'flag', value:'Flage'}
+        {colName:'flag', value:'Flage', notSortable:true}
       ]
     },
     book:{
@@ -28,7 +28,7 @@ export class TableModel{
         {colName:'medium', value:'Rodzaje nośników'},
         {colName:'cover', value:'Rodzaje okładek'},
         {colName:'price', value:'Cena'},
-        {colName:'coverImg', value:'Okładka'}
+        {colName:'coverImg', value:'Okładka', notSortable:true}
       ]
     },
     medium:{
