@@ -25,6 +25,17 @@ export class SortType {
   resetAndNext() {
     this._currentType = 'asc'
   }
+  getSortFactor():number {
+    switch (this._currentType){
+      case 'none':
+        return 0
+      case 'asc':
+        return 1
+      case 'desc':
+        return -1
+    }
+    return 0
+  }
 }
 
 
@@ -165,6 +176,9 @@ export class ElementsTableComponent implements OnInit {
         });
       }
     });
+    if(this.sortedCol && this.sortType.currentType()!=='none'){
+      arr.sort((a,b)=>{return this.sortType.getSortFactor()*(a.data[this.sortedCol.colName].localeCompare(b.data[this.sortedCol.colName]))})
+    }
     return arr
   }
 
