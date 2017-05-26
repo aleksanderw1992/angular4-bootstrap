@@ -59,9 +59,9 @@ export class ElementsTableComponent implements OnInit {
   element = '';
   model: any;
   data: Array<any>;
-  sortType: SortType = new SortType();
+  sortType: SortType;
   sortedCol: any;
-  elemOnPage:number=5;
+  elemOnPage:number;
   @ViewChild('pageNumberSelect') pageNumberSelect: ElementRef;
 
   constructor(private route: ActivatedRoute,
@@ -73,6 +73,9 @@ export class ElementsTableComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.sortType=new SortType();
+    this.elemOnPage=5;
+    this.sortedCol=undefined;
     this.route.params
       .subscribe(
         (params: Params) => {
@@ -189,7 +192,12 @@ export class ElementsTableComponent implements OnInit {
       }
     });
     if(this.sortedCol && this.sortType.isNotNone()){
-      arr.sort((a,b)=>{return this.sortType.getSortFactor()*(a.data[this.sortedCol.colName].localeCompare(b.data[this.sortedCol.colName]))})
+      arr.sort((a,b)=>{
+        let aData = a.data[this.sortedCol.colName];
+        let bData = b.data[this.sortedCol.colName];
+        if(!aData || !bData)return 0
+        return this.sortType.getSortFactor()*(aData.localeCompare(bData))
+      })
     }
     if(this.getMaxPage()>1){
       let length = arr.length
