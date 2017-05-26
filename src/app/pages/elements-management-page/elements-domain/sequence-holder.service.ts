@@ -4,7 +4,7 @@ export class SequenceHolder{
 
   get(entity:Entity){
     if(!this._sequences[entity]){
-      this._sequences[entity]= new Sequence();
+      this._sequences[entity]= new Sequence(entity);
     }
     return this._sequences[entity];
   }
@@ -16,5 +16,15 @@ export class Sequence{
   }
   getAndIncrease(){
     return this.counter++
+  }
+  constructor(entity:Entity){
+    let entities = localStorage[entity];
+    if (entities && entities!=="{}") {
+      let localStorageEntity = JSON.parse(localStorage[entity]);
+      let keys = Object.keys(localStorageEntity)
+      if(keys.length>0){
+        this.counter=+keys[keys.length-1]+1;
+      }
+    }
   }
 }
