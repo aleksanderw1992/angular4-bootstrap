@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, ElementRef, OnInit, ViewChild} from "@angular/core";
 import {ActivatedRoute, Params} from "@angular/router";
 import {AppEventHolder} from "../../../common/app-events-holder.service";
 import {TableModel} from "../elements-domain/table-model.model";
@@ -62,6 +62,7 @@ export class ElementsTableComponent implements OnInit {
   sortType: SortType = new SortType();
   sortedCol: any;
   elemOnPage:number=5;
+  @ViewChild('pageNumberSelect') pageNumberSelect: ElementRef;
 
   constructor(private route: ActivatedRoute,
               private appEventHolder: AppEventHolder,
@@ -190,6 +191,12 @@ export class ElementsTableComponent implements OnInit {
     if(this.sortedCol && this.sortType.isNotNone()){
       arr.sort((a,b)=>{return this.sortType.getSortFactor()*(a.data[this.sortedCol.colName].localeCompare(b.data[this.sortedCol.colName]))})
     }
+    if(this.getMaxPage()>1){
+      let length = arr.length
+      let start = (this.getPageNumber()-1)*this.elemOnPage
+      let end = Math.min((this.getPageNumber())*this.elemOnPage, length)
+      arr=arr.slice(start, end)
+    }
     return arr
   }
 
@@ -214,8 +221,11 @@ export class ElementsTableComponent implements OnInit {
     return Math.floor(rowCount/ this.elemOnPage)+1
   }
   getSelectArray(){
-    let arr=(<any>Array(this.getMaxPage())).fill().map((x,i)=>i+1)
-    // console.log(arr);
-    return arr
+    return (<any>Array(this.getMaxPage())).fill().map((x,i)=>i+1)
   }
+  getPageNumber(){
+    return this.pageNumberSelect.nativeElement.value
+  }
+  onPageNrSelectChange(){}
+
 }
