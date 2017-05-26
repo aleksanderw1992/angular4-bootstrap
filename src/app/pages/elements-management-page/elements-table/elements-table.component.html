@@ -41,6 +41,8 @@
   </table>
 </div>
 <div class="row">
+  <p>
+    Ilość elementów na stronie:
   <select [(ngModel)]="elemOnPage">
     <option>5</option>
     <option>10</option>
@@ -49,9 +51,10 @@
     <option>50</option>
     <option>100</option>
   </select>
+  </p>
   <p>
-    Page   <select [disabled]="getMaxPage()===1" (change)="onPageNrSelectChange()" #pageNumberSelect>
+    Strona <select [disabled]="getMaxPage()===1" (change)="onPageNrSelectChange()" #pageNumberSelect>
     <option *ngFor="let i of getSelectArray()">{{i}}</option>
-  </select> of {{getMaxPage()}}
+  </select> z {{getMaxPage()}}
   </p>
 </div>
