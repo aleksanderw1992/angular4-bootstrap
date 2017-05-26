@@ -226,7 +226,7 @@ export class ElementsTableComponent implements OnInit {
   }
   getMaxPage(){
     let rowCount = this.data.filter(e=>e).length;
-    return Math.floor(rowCount/ this.elemOnPage)+1
+    return Math.floor(Math.max(rowCount-1,0)/ this.elemOnPage)+1
   }
   getSelectArray(){
     return (<any>Array(this.getMaxPage())).fill().map((x,i)=>i+1)
