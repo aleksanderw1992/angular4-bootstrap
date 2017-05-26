@@ -228,4 +228,20 @@ export class ElementsTableComponent implements OnInit {
   }
   onPageNrSelectChange(){}
 
+  movePaginator(change) {
+    let maxPage = this.getMaxPage();
+    switch (change) {
+      case 1:
+      case -1:
+        let newValue = +this.pageNumberSelect.nativeElement.value + change;
+        this.pageNumberSelect.nativeElement.value = Math.max(Math.min(newValue,maxPage),1);
+        break
+      case 'first':
+        this.pageNumberSelect.nativeElement.value = 1
+        break
+      case 'last':
+        this.pageNumberSelect.nativeElement.value = maxPage
+        break
+    }
+  }
 }

@@ -57,4 +57,10 @@
     <option *ngFor="let i of getSelectArray()">{{i}}</option>
   </select> z {{getMaxPage()}}
   </p>
+  <p>
+    <span class="glyphicon glyphicon-backward" (click)="movePaginator('first')"></span>
+    <span class="glyphicon glyphicon-chevron-left" (click)="movePaginator(-1)"></span>
+    <span class="glyphicon glyphicon-chevron-right" (click)="movePaginator(1)"></span>
+    <span class="glyphicon glyphicon-forward" (click)="movePaginator('last')"></span>
+  </p>
 </div>
