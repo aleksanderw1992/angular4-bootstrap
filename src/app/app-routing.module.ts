@@ -5,6 +5,7 @@ import {ElementsManagementPageComponent} from './pages/elements-management-page/
 import {ElementsTableComponent} from './pages/elements-management-page/elements-table/elements-table.component';
 import {ConfigurationManagementPageComponent} from './pages/configuration-management-page/configuration-management-page.component'
 import {MainPageComponent} from './pages/main-page/main-page.component'
+import {ErrorPageComponent} from "./pages/error-page/error-page.component";
 
 const appRoutes: Routes = [
   { path: 'main', component: MainPageComponent },
@@ -12,6 +13,8 @@ const appRoutes: Routes = [
     { path: ':element-name', component: ElementsTableComponent}
   ] },
   { path: 'configuration', component: ConfigurationManagementPageComponent },
+  { path: 'error404', component: ErrorPageComponent, data: {message: 'Page not found!'} },
+  { path: '**', redirectTo: '/not-found' }
 ];
 
 @NgModule({

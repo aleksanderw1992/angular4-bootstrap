@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {ErrorHandler, NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 
@@ -26,6 +26,8 @@ import {AlertDialogComponent} from './common/alert-dialog/alert-dialog.component
 import {ConfirmDialogComponent} from './common/confirm-dialog/confirm-dialog.component';
 import {DropdownDirective} from "./common/directives/dropdown.directive";
 import {SequenceHolder} from "app/pages/elements-management-page/elements-domain/sequence-holder.service";
+import { ErrorPageComponent } from './pages/error-page/error-page.component';
+import { MyErrorHandler } from './pages/error-page/my-error-handler.service';
 
 
 @NgModule({
@@ -40,7 +42,8 @@ import {SequenceHolder} from "app/pages/elements-management-page/elements-domain
     LoginDialogComponent,
     AlertDialogComponent,
     ConfirmDialogComponent,
-    DropdownDirective
+    DropdownDirective,
+    ErrorPageComponent
 
   ],
   imports: [
@@ -55,7 +58,8 @@ import {SequenceHolder} from "app/pages/elements-management-page/elements-domain
     MaterialModule,
   ],
   entryComponents: [ElementDetailsDialogComponent, LoginDialogComponent, AlertDialogComponent, ConfirmDialogComponent],
-  providers: [ConfigurationService, AppEventHolder, Repository, CountriesHttpProvider, AuthenticationService, SequenceHolder],
+  providers: [ConfigurationService, AppEventHolder, Repository, CountriesHttpProvider, AuthenticationService,
+    SequenceHolder, {provide: ErrorHandler, useClass: MyErrorHandler}],
   bootstrap: [AppComponent]
 })
 export class AppModule {
