@@ -14,7 +14,8 @@ const appRoutes: Routes = [
   ] },
   { path: 'configuration', component: ConfigurationManagementPageComponent },
   { path: 'error404', component: ErrorPageComponent, data: {message: 'Page not found!'} },
-  { path: '**', redirectTo: '/not-found' }
+  { path: 'error', component: ErrorPageComponent },
+  { path: '**', redirectTo: '/error404' }
 ];
 
 @NgModule({
