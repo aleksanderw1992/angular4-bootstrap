@@ -24,5 +24,8 @@ export class ErrorPageComponent implements OnInit{
       }
     );
   }
+  getErrorMessage(){
+    return this.errorMessage
+  }
 
 }

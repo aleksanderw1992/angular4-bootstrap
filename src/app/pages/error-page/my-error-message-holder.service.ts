@@ -1,7 +1,7 @@
 import {BehaviorSubject} from "rxjs/BehaviorSubject";
 
 export class MyErrorMessageHolder {
-  private _message = new BehaviorSubject<string>('');;
+  private _message = new BehaviorSubject<string>(null);;
 
   updateMessage(message:string){
     this._message.next(message)

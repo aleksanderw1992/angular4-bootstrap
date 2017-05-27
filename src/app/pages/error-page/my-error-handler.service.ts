@@ -11,7 +11,7 @@ export class MyErrorHandler implements ErrorHandler {
   }
 
   handleError(error) {
-    console.log(error.message);
+    // console.log(error.message);
     this.holder.updateMessage(error.message)
     this.router.navigate(['/error'])
   }
