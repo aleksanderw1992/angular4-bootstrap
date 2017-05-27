@@ -28,6 +28,7 @@ import {DropdownDirective} from "./common/directives/dropdown.directive";
 import {SequenceHolder} from "app/pages/elements-management-page/elements-domain/sequence-holder.service";
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { MyErrorHandler } from './pages/error-page/my-error-handler.service';
+import {MyErrorMessageHolder} from "./pages/error-page/my-error-message-holder.service";
 
 
 @NgModule({
@@ -59,7 +60,7 @@ import { MyErrorHandler } from './pages/error-page/my-error-handler.service';
   ],
   entryComponents: [ElementDetailsDialogComponent, LoginDialogComponent, AlertDialogComponent, ConfirmDialogComponent],
   providers: [ConfigurationService, AppEventHolder, Repository, CountriesHttpProvider, AuthenticationService,
-    SequenceHolder, {provide: ErrorHandler, useClass: MyErrorHandler}],
+    SequenceHolder, {provide: ErrorHandler, useClass: MyErrorHandler}, MyErrorMessageHolder],
   bootstrap: [AppComponent]
 })
 export class AppModule {
