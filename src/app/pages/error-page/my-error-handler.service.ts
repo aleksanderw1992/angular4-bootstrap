@@ -11,7 +11,9 @@ export class MyErrorHandler implements ErrorHandler {
   }
 
   handleError(error) {
-    // console.log(error.message);
+    //todo sorry big hack
+    if("Uncaught (in promise): Error: Cannot activate an already activated outlet" === error.message.substr(0,73)) return
+    console.log('logging error message: '+error.message);
     this.holder.updateMessage(error.message)
     this.router.navigate(['/error'])
   }

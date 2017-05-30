@@ -65,6 +65,7 @@ export class ElementsTableComponent implements OnInit {
   elemOnPage:number;
   @ViewChild('pageNumberSelect') pageNumberSelect: ElementRef;
 
+
   constructor(private route: ActivatedRoute,
               private appEventHolder: AppEventHolder,
               private tableModel: TableModel,
@@ -87,28 +88,32 @@ export class ElementsTableComponent implements OnInit {
           this.model = this.tableModel.model[this.element];
           this.data = this.repository.getAll(this.element);
           this.slimLoader.reset();
-          for(let i=0;i<5;i++){
-            setTimeout(()=>{
-              this.slimLoader.progress+=20
-              this.data = this.repository.getAll(this.element);
-              let fetchedAnyData = function (data) {
-                //ts bug, cannot run "fetchedAnyData.call(this)"
-                return data && data.length && data.length>0;
-              };
-              if(i==4 ){
-                if(!fetchedAnyData(this.data)){
-                  console.log('failed to fetch data');
-                  throw new Error('failed to fetch data');
+
+          let fetchedAnyData = function (data) {
+            //ts bug, cannot run "fetchedAnyData.call(this)"
+            return data && data.length && data.length>0;
+          };
+          let i=0;
+          let fetchDataNextStep = function(){
+            this.slimLoader.progress += 20
+            this.data = this.repository.getAll(this.element);
+            if (i == 4) {
+              if (!fetchedAnyData(this.data)) {
+                console.log('failed to fetch data');
+                throw new Error('failed to fetch data');
                 }
-              }
-              if(fetchedAnyData(this.data)){
-                this.slimLoader.complete();
-                i=10//mock break loop
-              }
-              },(i+1)*2000);
+            }
+            if (fetchedAnyData(this.data)) {
+              this.slimLoader.complete();
+              return;
+            }else{
+              i++;
+              setTimeout(() =>fetchDataNextStep.call(this), 2);
+            }
           }
+          fetchDataNextStep.call(this);
         }
-      );
+      )
   }
 
 

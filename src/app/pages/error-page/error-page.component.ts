@@ -15,6 +15,7 @@ export class ErrorPageComponent implements OnInit{
   }
 
   ngOnInit() {
+    //todo snapshot? or timeout - sometimes not working properly
     this.messageHolder.message.subscribe((message) => {
       this.errorMessage = message;
     })
