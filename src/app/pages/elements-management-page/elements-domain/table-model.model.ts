@@ -16,7 +16,7 @@ export class TableModel{
     country:{
       columns:[
         {colName:'origName', value:'Nazwa w j. oryginalnym'},
-        {colName:'flag', value:'Flage', notSortable:true}
+        {colName:'flag', value:'Flaga', notSortable:true}
       ]
     },
     book:{
