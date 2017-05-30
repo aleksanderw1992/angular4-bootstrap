@@ -29,7 +29,7 @@ import {SequenceHolder} from "app/pages/elements-management-page/elements-domain
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { MyErrorHandler } from './pages/error-page/my-error-handler.service';
 import {MyErrorMessageHolder} from "./pages/error-page/my-error-message-holder.service";
-
+import {SlimLoadingBarModule} from 'ng2-slim-loading-bar';
 
 @NgModule({
   declarations: [
@@ -57,6 +57,7 @@ import {MyErrorMessageHolder} from "./pages/error-page/my-error-message-holder.s
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MaterialModule,
+    SlimLoadingBarModule.forRoot()
   ],
   entryComponents: [ElementDetailsDialogComponent, LoginDialogComponent, AlertDialogComponent, ConfirmDialogComponent],
   providers: [ConfigurationService, AppEventHolder, Repository, CountriesHttpProvider, AuthenticationService,
