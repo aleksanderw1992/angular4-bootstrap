@@ -15,6 +15,7 @@ export class CountriesHttpProvider {
       return this.countries;
     }
     this.initCountries();
+
     return this.countries;
   }
 

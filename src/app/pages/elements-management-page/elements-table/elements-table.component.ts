@@ -7,6 +7,7 @@ import {ElementDetailsDialogComponent} from "app/pages/elements-management-page/
 import {MdDialog} from "@angular/material";
 import {AuthenticationService} from "../../../auth/authentication.service";
 import {AlertDialogComponent} from "../../../common/alert-dialog/alert-dialog.component";
+import {SlimLoadingBarService} from "ng2-slim-loading-bar";
 
 export declare type CrudDialogOption = 'view' | 'add' | 'edit' | 'delete';
 export class SortType {
@@ -69,7 +70,9 @@ export class ElementsTableComponent implements OnInit {
               private tableModel: TableModel,
               private repository: Repository,
               public dialog: MdDialog,
-              private authService: AuthenticationService) {
+              private authService: AuthenticationService,
+     private slimLoader: SlimLoadingBarService
+  ) {
   }
 
   ngOnInit() {
@@ -83,6 +86,27 @@ export class ElementsTableComponent implements OnInit {
           this.appEventHolder.publishElement(this.element);
           this.model = this.tableModel.model[this.element];
           this.data = this.repository.getAll(this.element);
+          this.slimLoader.reset();
+          for(let i=0;i<5;i++){
+            setTimeout(()=>{
+              this.slimLoader.progress+=20
+              this.data = this.repository.getAll(this.element);
+              let fetchedAnyData = function (data) {
+                //ts bug, cannot run "fetchedAnyData.call(this)"
+                return data && data.length && data.length>0;
+              };
+              if(i==4 ){
+                if(!fetchedAnyData(this.data)){
+                  console.log('failed to fetch data');
+                  throw new Error('failed to fetch data');
+                }
+              }
+              if(fetchedAnyData(this.data)){
+                this.slimLoader.complete();
+                i=10//mock break loop
+              }
+              },(i+1)*2000);
+          }
         }
       );
   }
