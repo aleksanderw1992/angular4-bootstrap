@@ -1,11 +1,19 @@
 //todo use localstorage
 export class ConfigurationService{
-  private _maxTimeInMilis:number =10*1000;
-  private _language:string='pl';
+  private _maxTimeInMilis:number ;
+  private _language:string=';
+
+  constructor(){
+    this._maxTimeInMilis= localStorage._maxTimeInMilis ||10*1000
+    this._language= localStorage._language ||'pl'
+  }
 
   update(maxTimeInMilis, language){
     this._maxTimeInMilis=maxTimeInMilis;
     this._language=language;
+
+    localStorage._maxTimeInMilis= this._maxTimeInMilis
+    localStorage._language= this._language
   }
 
   public get maxTimeInMilis():number {
