@@ -8,11 +8,13 @@ import {ConfigurationService} from './configuration.service'
 })
 export class ConfigurationManagementPageComponent implements OnInit {
 
-  maxTimeInMilis:number =10*1000;
-  language:string='pl';
+  maxTimeInMilis:number;
+  language:string;
   constructor(private configurationService:ConfigurationService) { }
 
   ngOnInit() {
+    this.maxTimeInMilis= this.configurationService.maxTimeInMilis;
+    this.language= this.configurationService.language;
   }
   onUpdateConfig(){
     this.configurationService.update(this.maxTimeInMilis, this.language);

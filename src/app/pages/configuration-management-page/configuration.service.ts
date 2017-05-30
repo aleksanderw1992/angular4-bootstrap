@@ -1,3 +1,4 @@
+//todo use localstorage
 export class ConfigurationService{
   private _maxTimeInMilis:number =10*1000;
   private _language:string='pl';

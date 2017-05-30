@@ -8,6 +8,7 @@ import {MdDialog} from "@angular/material";
 import {AuthenticationService} from "../../../auth/authentication.service";
 import {AlertDialogComponent} from "../../../common/alert-dialog/alert-dialog.component";
 import {SlimLoadingBarService} from "ng2-slim-loading-bar";
+import {ConfigurationService} from "../../configuration-management-page/configuration.service";
 
 export declare type CrudDialogOption = 'view' | 'add' | 'edit' | 'delete';
 export class SortType {
@@ -72,7 +73,8 @@ export class ElementsTableComponent implements OnInit {
               private repository: Repository,
               public dialog: MdDialog,
               private authService: AuthenticationService,
-     private slimLoader: SlimLoadingBarService
+     private slimLoader: SlimLoadingBarService,
+              private configuration: ConfigurationService
   ) {
   }
 
@@ -93,11 +95,13 @@ export class ElementsTableComponent implements OnInit {
             //ts bug, cannot run "fetchedAnyData.call(this)"
             return data && data.length && data.length>0;
           };
-          let i=0;
+          let i=1;
+          let steps = 5;
+          let timePerStep=Math.floor(this.configuration.maxTimeInMilis/ steps)
           let fetchDataNextStep = function(){
             this.slimLoader.progress += 20
             this.data = this.repository.getAll(this.element);
-            if (i == 4) {
+            if (i == steps) {
               if (!fetchedAnyData(this.data)) {
                 console.log('failed to fetch data');
                 throw new Error('failed to fetch data');
@@ -108,7 +112,7 @@ export class ElementsTableComponent implements OnInit {
               return;
             }else{
               i++;
-              setTimeout(() =>fetchDataNextStep.call(this), 2);
+              setTimeout(() =>fetchDataNextStep.call(this), timePerStep);
             }
           }
           fetchDataNextStep.call(this);
