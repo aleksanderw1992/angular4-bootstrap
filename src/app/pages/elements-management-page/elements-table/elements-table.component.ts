@@ -99,10 +99,12 @@ export class ElementsTableComponent implements OnInit {
           let steps = 5;
           let timePerStep=Math.floor(this.configuration.maxTimeInMilis/ steps)
           let fetchDataNextStep = function(){
+            //todo block page
             this.slimLoader.progress += 20
             this.data = this.repository.getAll(this.element);
             if (i == steps) {
               if (!fetchedAnyData(this.data)) {
+                //todo ask if an error should occurr only for countries (fetchable) or from any element kind - now for any
                 console.log('failed to fetch data');
                 throw new Error('failed to fetch data');
                 }
