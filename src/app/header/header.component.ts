@@ -47,17 +47,21 @@ export class HeaderComponent {
   }
 
   login() {
-    // let dialogRef = this.dialog.open(LoginDialogComponent, {
-    //   disableClose: true,
-    //   role: 'dialog'
-    // });
-    // dialogRef.afterClosed().subscribe(result => {
-    //   console.log(result);
-    //   if (result) {
-    //     this.authenticationService.login(result)
-    //   }
-    // });
+    let dialogRef = this.dialog.open(LoginDialogComponent, {
+      disableClose: true,
+      role: 'dialog'
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+      if (result) {
+        this.authenticationService.login(result)
+      }
+    });
+    /*
+    MOCK ERROR
     var a = 'asdf'.sub()[-1].sub().charAt(-1).sub()//mock error
+
+     */
   }
   logout(){
     let dialogRef = this.dialog.open(ConfirmDialogComponent, {
