@@ -36,7 +36,7 @@
         <li><a>{{authenticatedUser()}}</a></li>
         <li *ngIf="isAuthenticated()"><a class="a-cursor-pointer" (click)="logout()">Wyloguj</a></li>
         <li *ngIf="!isAuthenticated()"><a class="a-cursor-pointer" (click)="login()">Zaloguj</a></li>
-        <li><a style="cursor: pointer; color:red" (click)="clear()">Reset DB</a></li>
+        <li><a class="a-cursor-pointer" style="color:red"  (click)="clear()">Reset DB</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="../navbar/">Default</a></li>
