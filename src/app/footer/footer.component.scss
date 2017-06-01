@@ -5,3 +5,11 @@
   height: 60px;
   background-color: #f5f5f5;
 }
+
+//hiding footer for small devices
+@media screen and (max-width: 760px)
+{
+  .footer {
+    display:none;
+  }
+}
