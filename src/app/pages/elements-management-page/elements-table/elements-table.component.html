@@ -1,7 +1,9 @@
 <div class="row" *ngIf="disableEditingAccess()">
-  <p>
-    Strona ta wyświetlana jest w trybie tylko do odczytu
-  </p>
+  <div class="col-md-12">
+    <p>
+      Strona ta wyświetlana jest w trybie tylko do odczytu
+    </p>
+  </div>
 </div>
 <div class="row">
   <div class="col-md-12">
@@ -12,55 +14,60 @@
 </div>
 
 <div class="row">
-  <table class="table">
-    <thead>
-    <tr>
-      <th *ngFor="let col of model.columns" (click)="sort(col)">
-        {{col.value}}
-        <span *ngIf="sortType.isNotNone() && sortedCol === col" [class]="sortType.getClass()"></span>
-      </th>
-      <th>
-        Akcja
-      </th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let row of getData()">
-      <td *ngFor="let col of model.columns">
-        <div innerHTML="{{getTd(row.data,col)}}"></div>
-        <!--{{getTd(row,col)}}-->
-      </td>
-      <td>
-        <span (click)="view(row.i)" class="glyphicon glyphicon-eye-open"></span>
-        <span (click)="order(row.i)" *ngIf="element==='book'" class="glyphicon glyphicon-shopping-cart"></span>
-        <span (click)="edit(row.i)" *ngIf="element!=='country'" class="glyphicon glyphicon-edit"></span>
-        <span (click)="delete(row.i)" *ngIf="element!=='country'" class="glyphicon glyphicon-remove"></span>
-      </td>
-    </tr>
-    </tbody>
-  </table>
+  <div class="col-md-12">
+    <table class="table">
+      <thead>
+      <tr>
+        <th *ngFor="let col of model.columns" (click)="sort(col)">
+          {{col.value}}
+          <span *ngIf="sortType.isNotNone() && sortedCol === col" [class]="sortType.getClass()"></span>
+        </th>
+        <th>
+          Akcja
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let row of getData()">
+        <td *ngFor="let col of model.columns">
+          <div innerHTML="{{getTd(row.data,col)}}"></div>
+          <!--{{getTd(row,col)}}-->
+        </td>
+        <td>
+          <span (click)="view(row.i)" class="glyphicon glyphicon-eye-open"></span>
+          <span (click)="order(row.i)" *ngIf="element==='book'" class="glyphicon glyphicon-shopping-cart"></span>
+          <span (click)="edit(row.i)" *ngIf="element!=='country'" class="glyphicon glyphicon-edit"></span>
+          <span (click)="delete(row.i)" *ngIf="element!=='country'" class="glyphicon glyphicon-remove"></span>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 <div class="row">
-  <p>
-    Ilość elementów na stronie:
-  <select [(ngModel)]="elemOnPage">
-    <option>5</option>
-    <option>10</option>
-    <option>15</option>
-    <option>20</option>
-    <option>50</option>
-    <option>100</option>
-  </select>
-  </p>
-  <p>
-    Strona <select [disabled]="getMaxPage()===1" (change)="onPageNrSelectChange()" #pageNumberSelect>
-    <option *ngFor="let i of getSelectArray()">{{i}}</option>
-  </select> z {{getMaxPage()}}
-  </p>
-  <p>
-    <span class="glyphicon glyphicon-backward" (click)="movePaginator('first')"></span>
-    <span class="glyphicon glyphicon-chevron-left" (click)="movePaginator(-1)"></span>
-    <span class="glyphicon glyphicon-chevron-right" (click)="movePaginator(1)"></span>
-    <span class="glyphicon glyphicon-forward" (click)="movePaginator('last')"></span>
-  </p>
+  <div class="col-md-12">
+
+    <p>
+      Ilość elementów na stronie:
+      <select [(ngModel)]="elemOnPage">
+        <option>5</option>
+        <option>10</option>
+        <option>15</option>
+        <option>20</option>
+        <option>50</option>
+        <option>100</option>
+      </select>
+    </p>
+    <p>
+      Strona <select [disabled]="getMaxPage()===1" (change)="onPageNrSelectChange()" #pageNumberSelect>
+      <option *ngFor="let i of getSelectArray()">{{i}}</option>
+    </select> z {{getMaxPage()}}
+    </p>
+    <p>
+      <span class="glyphicon glyphicon-backward" (click)="movePaginator('first')"></span>
+      <span class="glyphicon glyphicon-chevron-left" (click)="movePaginator(-1)"></span>
+      <span class="glyphicon glyphicon-chevron-right" (click)="movePaginator(1)"></span>
+      <span class="glyphicon glyphicon-forward" (click)="movePaginator('last')"></span>
+    </p>
+  </div>
 </div>
