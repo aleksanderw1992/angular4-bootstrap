@@ -1,26 +1,23 @@
-<div class="container">
-
-  <div class="row">
-    <p>Najczęściej kupowane książki</p>
-  </div>
-  <div class="row">
-    <table class="table table-responsive">
-      <thead>
-      <tr>
-        <th>
-          Nazwa książki
-        </th>
-        <th>
-          Ilość zamówionych egzemplarzy
-        </th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let row of getOrderBooks(); let i = index;">
-        <td>{{''+row.bookTitle}}</td>
-        <td>{{''+row.orderCount}}</td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
+<div class="row">
+  <p>Najczęściej kupowane książki</p>
+</div>
+<div class="row">
+  <table class="table table-responsive">
+    <thead>
+    <tr>
+      <th>
+        Nazwa książki
+      </th>
+      <th>
+        Ilość zamówionych egzemplarzy
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let row of getOrderBooks(); let i = index;">
+      <td>{{''+row.bookTitle}}</td>
+      <td>{{''+row.orderCount}}</td>
+    </tr>
+    </tbody>
+  </table>
 </div>
