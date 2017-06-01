@@ -31,6 +31,7 @@ import { MyErrorHandler } from './pages/error-page/my-error-handler.service';
 import {MyErrorMessageHolder} from "./pages/error-page/my-error-message-holder.service";
 import {SlimLoadingBarModule} from 'ng2-slim-loading-bar';
 import { FooterComponent } from './footer/footer.component';
+import {DropdownDirectiveMouseEnter} from "./common/directives/dropdown-mouse-enter.directive";
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { FooterComponent } from './footer/footer.component';
     AlertDialogComponent,
     ConfirmDialogComponent,
     DropdownDirective,
+    DropdownDirectiveMouseEnter,
     ErrorPageComponent,
     FooterComponent
 

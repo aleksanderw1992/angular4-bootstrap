@@ -40,8 +40,11 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a class="navbar-brand global-pointer">
+          <a class="navbar-brand global-pointer" appDropdownMouseEnter closeOnMouseLeave="false">
             <img [src]="pathImg('books.png')" alt="books">
+            <div class="dropdown-menu">
+              <img [src]="pathImg('books.png')" alt="books">
+            </div>
           </a>
         </li>
       </ul>
