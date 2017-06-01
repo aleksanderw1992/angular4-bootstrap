@@ -8,9 +8,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <ul class="dropdown-menu">
+          <li><a>{{authenticatedUser()}}</a></li>
+          <li role="separator" class="divider"></li>
           <li><a class="a-cursor-pointer" (click)="onToogle(0)">Strona główna</a></li>
           <li><a class="a-cursor-pointer" (click)="onToogle(1)">Zarządzanie elementami</a></li>
           <li><a class="a-cursor-pointer" (click)="onToogle(2)">Konfiguracja aplikacji</a></li>
+          <li role="separator" class="divider"></li>
+          <li *ngIf="isAuthenticated()"><a class="a-cursor-pointer" (click)="logout()">Wyloguj</a></li>
+          <li *ngIf="!isAuthenticated()"><a class="a-cursor-pointer" (click)="login()">Zaloguj</a></li>
+          <li><a style="cursor: pointer; color:red" (click)="clear()">Reset DB</a></li>
         </ul>
       </button>
       <a class="navbar-brand">
