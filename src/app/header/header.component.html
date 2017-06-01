@@ -16,7 +16,7 @@
           <li role="separator" class="divider"></li>
           <li *ngIf="isAuthenticated()"><a class="a-cursor-pointer" (click)="logout()">Wyloguj</a></li>
           <li *ngIf="!isAuthenticated()"><a class="a-cursor-pointer" (click)="login()">Zaloguj</a></li>
-          <li><a style="cursor: pointer; color:red" (click)="clear()">Reset DB</a></li>
+          <li><a class="a-cursor-pointer" style="color:red" (click)="clear()">Reset DB</a></li>
         </ul>
       </button>
       <a class="navbar-brand">
