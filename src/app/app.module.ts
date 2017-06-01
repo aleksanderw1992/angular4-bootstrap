@@ -30,6 +30,7 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { MyErrorHandler } from './pages/error-page/my-error-handler.service';
 import {MyErrorMessageHolder} from "./pages/error-page/my-error-message-holder.service";
 import {SlimLoadingBarModule} from 'ng2-slim-loading-bar';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import {SlimLoadingBarModule} from 'ng2-slim-loading-bar';
     AlertDialogComponent,
     ConfirmDialogComponent,
     DropdownDirective,
-    ErrorPageComponent
+    ErrorPageComponent,
+    FooterComponent
 
   ],
   imports: [
