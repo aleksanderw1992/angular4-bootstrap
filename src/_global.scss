@@ -1,5 +1,5 @@
 .glyphicon{
-  cursor: pointer;
+  @extend .global-pointer;
 }
 .global-pointer{
   cursor: pointer;

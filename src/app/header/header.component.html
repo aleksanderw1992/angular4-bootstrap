@@ -10,13 +10,13 @@
         <ul class="dropdown-menu" style="left:-157px;">
           <li><a>{{authenticatedUser()}}</a></li>
           <li role="separator" class="divider"></li>
-          <li><a class="a-cursor-pointer" (click)="onToogle(0)">Strona główna</a></li>
-          <li><a class="a-cursor-pointer" (click)="onToogle(1)">Zarządzanie elementami</a></li>
-          <li><a class="a-cursor-pointer" (click)="onToogle(2)">Konfiguracja aplikacji</a></li>
+          <li><a class="global-pointer" (click)="onToogle(0)">Strona główna</a></li>
+          <li><a class="global-pointer" (click)="onToogle(1)">Zarządzanie elementami</a></li>
+          <li><a class="global-pointer" (click)="onToogle(2)">Konfiguracja aplikacji</a></li>
           <li role="separator" class="divider"></li>
-          <li *ngIf="isAuthenticated()"><a class="a-cursor-pointer" (click)="logout()">Wyloguj</a></li>
-          <li *ngIf="!isAuthenticated()"><a class="a-cursor-pointer" (click)="login()">Zaloguj</a></li>
-          <li><a class="a-cursor-pointer" style="color:red" (click)="clear()">Reset DB</a></li>
+          <li *ngIf="isAuthenticated()"><a class="global-pointer" (click)="logout()">Wyloguj</a></li>
+          <li *ngIf="!isAuthenticated()"><a class="global-pointer" (click)="login()">Zaloguj</a></li>
+          <li><a class="global-pointer" style="color:red" (click)="clear()">Reset DB</a></li>
         </ul>
       </button>
       <a class="navbar-brand">
@@ -26,17 +26,17 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li class="dropdown active" appDropdown closeOnMouseLeave="true">
-          <a class="a-cursor-pointer dropdown-toggle" role="button">{{selectedPage}} <span class="caret"></span></a>
+          <a class="global-pointer dropdown-toggle" role="button">{{selectedPage}} <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a class="a-cursor-pointer" (click)="onToogle(0)">Strona główna</a></li>
-            <li><a class="a-cursor-pointer" (click)="onToogle(1)">Zarządzanie elementami</a></li>
-            <li><a class="a-cursor-pointer" (click)="onToogle(2)">Konfiguracja aplikacji</a></li>
+            <li><a class="global-pointer" (click)="onToogle(0)">Strona główna</a></li>
+            <li><a class="global-pointer" (click)="onToogle(1)">Zarządzanie elementami</a></li>
+            <li><a class="global-pointer" (click)="onToogle(2)">Konfiguracja aplikacji</a></li>
           </ul>
         </li>
         <li><a>{{authenticatedUser()}}</a></li>
-        <li *ngIf="isAuthenticated()"><a class="a-cursor-pointer" (click)="logout()">Wyloguj</a></li>
-        <li *ngIf="!isAuthenticated()"><a class="a-cursor-pointer" (click)="login()">Zaloguj</a></li>
-        <li><a class="a-cursor-pointer" style="color:red"  (click)="clear()">Reset DB</a></li>
+        <li *ngIf="isAuthenticated()"><a class="global-pointer" (click)="logout()">Wyloguj</a></li>
+        <li *ngIf="!isAuthenticated()"><a class="global-pointer" (click)="login()">Zaloguj</a></li>
+        <li><a class="global-pointer" style="color:red"  (click)="clear()">Reset DB</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="../navbar/">Default</a></li>
