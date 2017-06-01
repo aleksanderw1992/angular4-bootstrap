@@ -13,8 +13,6 @@ import {ConfirmDialogComponent} from "../common/confirm-dialog/confirm-dialog.co
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  logoPath = '\\assets\\img\\boss.jpg'
-
   dropdownLabels: Array<{ id: string, name: string, route: string }> = [
     {id: 'main', name: 'Strona główna', route: '/main'},
     {id: 'elements', name: 'Zarządzanie elementami', route: '/elements'},
@@ -80,5 +78,9 @@ export class HeaderComponent {
   clear(){
     window.localStorage.clear()
     window.location.reload(true)
+  }
+
+  pathImg(img){
+    return '\\assets\\img\\' +img;
   }
 }

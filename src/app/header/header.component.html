@@ -20,7 +20,7 @@
         </ul>
       </a>
       <a class="navbar-brand">
-        <img [src]="logoPath" alt="company logo">
+        <img [src]="pathImg('boss.jpg')" alt="company logo">
       </a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
@@ -39,9 +39,11 @@
         <li><a class="global-pointer" style="color:red"  (click)="clear()">Reset DB</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="../navbar/">Default</a></li>
-        <li><a href="../navbar-static-top/">Static top</a></li>
-        <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
+        <li>
+          <a class="navbar-brand global-pointer">
+            <img [src]="pathImg('books.png')" alt="books">
+          </a>
+        </li>
       </ul>
     </div>
   </div>
