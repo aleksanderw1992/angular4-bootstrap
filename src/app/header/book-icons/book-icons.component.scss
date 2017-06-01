@@ -1,0 +1,11 @@
+.flex-container{
+  display: flex;
+  flex-direction:column;
+  flex-wrap:wrap;
+  height:600px;
+}
+.flex-item{
+  flex:0 1 auto;
+  width:150px;
+  height:150px;
+}
