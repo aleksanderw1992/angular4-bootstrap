@@ -1,5 +1,11 @@
 {
   "main": {
     "topPurchasedBooks": "Najczęściej kupowane książki"
+  },
+  "nav":{
+    "mainPage":"Strona główna",
+    "elementsManagementPage":"Zarządzanie elementami",
+    "configurationPage":"Konfiguracja aplikacji",
+    "unauthorisedUser":"Gość"
   }
 }

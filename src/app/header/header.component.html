@@ -10,9 +10,9 @@
         <ul class="dropdown-menu" style="left:-157px;">
           <li><a>{{authenticatedUser()}}</a></li>
           <li role="separator" class="divider"></li>
-          <li><a class="global-pointer" (click)="onToogle(0)">Strona główna</a></li>
-          <li><a class="global-pointer" (click)="onToogle(1)">Zarządzanie elementami</a></li>
-          <li><a class="global-pointer" (click)="onToogle(2)">Konfiguracja aplikacji</a></li>
+          <li><a class="global-pointer" (click)="onToogle(0)">{{'nav.mainPage' | translate}}</a></li>
+          <li><a class="global-pointer" (click)="onToogle(1)">{{'nav.elementsManagementPage' | translate}}</a></li>
+          <li><a class="global-pointer" (click)="onToogle(2)">{{'nav.configurationPage' | translate}}</a></li>
           <li role="separator" class="divider"></li>
           <li *ngIf="isAuthenticated()"><a class="global-pointer" (click)="logout()">Wyloguj</a></li>
           <li *ngIf="!isAuthenticated()"><a class="global-pointer" (click)="login()">Zaloguj</a></li>
@@ -28,9 +28,9 @@
         <li class="dropdown active" appDropdown closeOnMouseLeave="true">
           <a class="global-pointer dropdown-toggle" role="button">{{selectedPage}} <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a class="global-pointer" (click)="onToogle(0)">Strona główna</a></li>
-            <li><a class="global-pointer" (click)="onToogle(1)">Zarządzanie elementami</a></li>
-            <li><a class="global-pointer" (click)="onToogle(2)">Konfiguracja aplikacji</a></li>
+            <li><a class="global-pointer" (click)="onToogle(0)">{{'nav.mainPage' | translate}}</a></li>
+            <li><a class="global-pointer" (click)="onToogle(1)">{{'nav.elementsManagementPage' | translate}}</a></li>
+            <li><a class="global-pointer" (click)="onToogle(2)">{{'nav.configurationPage' | translate}}</a></li>
           </ul>
         </li>
         <li><a>{{authenticatedUser()}}</a></li>

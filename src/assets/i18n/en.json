@@ -1,5 +1,11 @@
 {
   "main": {
     "topPurchasedBooks": "Top purchased books"
+  },
+  "nav":{
+    "mainPage":"Main page",
+    "elementsManagementPage":"Elements management",
+    "configurationPage":"Application configuration",
+    "unauthorisedUser":"Guest"
   }
 }
