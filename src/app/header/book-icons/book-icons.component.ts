@@ -21,7 +21,6 @@ export class BookIconsComponent implements OnInit {
     };
     fetchBooks.call(this);
     this.appEventHolder.elementChanged.subscribe(e=>{
-      console.log('e: '+e);
       if(e==='book'){
         fetchBooks.call(this);
       }
