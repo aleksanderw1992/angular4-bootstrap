@@ -1,8 +1,12 @@
+import {TranslateService} from "@ngx-translate/core";
+import {Injectable} from "@angular/core";
+
+@Injectable()
 export class ConfigurationService{
   private _maxTimeInMilis:number ;
   private _language:string;
 
-  constructor(){
+  constructor(private translateService: TranslateService){
     this._maxTimeInMilis= localStorage._maxTimeInMilis ||10*1000
     this._language= localStorage._language ||'pl'
   }
@@ -13,6 +17,8 @@ export class ConfigurationService{
 
     localStorage._maxTimeInMilis= this._maxTimeInMilis
     localStorage._language= this._language
+
+    this.translateService.use(this._language);
   }
 
   public get maxTimeInMilis():number {

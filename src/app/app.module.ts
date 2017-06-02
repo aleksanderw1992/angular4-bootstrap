@@ -33,6 +33,7 @@ import {SlimLoadingBarModule} from 'ng2-slim-loading-bar';
 import { FooterComponent } from './footer/footer.component';
 import {DropdownDirectiveMouseEnter} from "./common/directives/dropdown-mouse-enter.directive";
 import { BookIconsComponent } from './header/book-icons/book-icons.component';
+import {AppTranslationModule} from "./app-translation.module";
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { BookIconsComponent } from './header/book-icons/book-icons.component';
     HttpModule,
     FlexLayoutModule,
     AppRoutingModule,
+    AppTranslationModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MaterialModule,
