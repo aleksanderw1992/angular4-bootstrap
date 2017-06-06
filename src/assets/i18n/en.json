@@ -32,6 +32,7 @@
     }
   },
   "configuration": {
+    "title": "Application configuration",
     "language": "Application language",
     "maxTime": "Maximum time to fetch data (ms)",
     "saveBtn": "Save"

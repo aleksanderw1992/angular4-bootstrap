@@ -32,6 +32,7 @@
     }
   },
   "configuration": {
+    "title": "Konfiguracja aplikacji",
     "language": "Język aplikacji",
     "maxTime": "Maksymalny czas oczekiwania na wykonanie zapytania po dane (ms)",
     "saveBtn": "Zapisz"
