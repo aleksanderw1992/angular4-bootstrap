@@ -6,6 +6,10 @@
     "mainPage":"Main page",
     "elementsManagementPage":"Elements management",
     "configurationPage":"Application configuration",
-    "unauthorisedUser":"Guest"
+    "unauthorisedUser":"Guest",
+    "login":"Login",
+    "logout":"Logout",
+    "resetDb":"Reset DB"
+
   }
 }

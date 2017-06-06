@@ -16,7 +16,7 @@
           <li role="separator" class="divider"></li>
           <li *ngIf="isAuthenticated()"><a class="global-pointer" (click)="logout()">Wyloguj</a></li>
           <li *ngIf="!isAuthenticated()"><a class="global-pointer" (click)="login()">Zaloguj</a></li>
-          <li><a class="global-pointer" style="color:red" (click)="clear()">Reset DB</a></li>
+          <li><a class="global-pointer" style="color:red" (click)="clear()">{{'nav.resetDb' | translate}}</a></li>
         </ul>
       </a>
       <a class="navbar-brand">
@@ -34,9 +34,9 @@
           </ul>
         </li>
         <li><a>{{authenticatedUser()|translate}}</a></li>
-        <li *ngIf="isAuthenticated()"><a class="global-pointer" (click)="logout()">Wyloguj</a></li>
-        <li *ngIf="!isAuthenticated()"><a class="global-pointer" (click)="login()">Zaloguj</a></li>
-        <li><a class="global-pointer" style="color:red"  (click)="clear()">Reset DB</a></li>
+        <li *ngIf="isAuthenticated()"><a class="global-pointer" (click)="logout()">{{'nav.logout' | translate}}</a></li>
+        <li *ngIf="!isAuthenticated()"><a class="global-pointer" (click)="login()">{{'nav.login' | translate}}</a></li>
+        <li><a class="global-pointer" style="color:red"  (click)="clear()">{{'nav.resetDb' | translate}}</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>

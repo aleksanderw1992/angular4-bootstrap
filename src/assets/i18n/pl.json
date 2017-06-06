@@ -6,6 +6,9 @@
     "mainPage":"Strona główna",
     "elementsManagementPage":"Zarządzanie elementami",
     "configurationPage":"Konfiguracja aplikacji",
-    "unauthorisedUser":"Gość"
+    "unauthorisedUser":"Gość",
+    "login":"Zaloguj",
+    "logout":"Wyloguj",
+    "resetDb":"Wyczyść bazę"
   }
 }
