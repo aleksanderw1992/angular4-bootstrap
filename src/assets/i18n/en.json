@@ -32,7 +32,7 @@
     "login": {
       "cancelBtn": "Back",
       "loginBtn": "Login",
-      "hint": "hint: 'admin' is user with extended privileges",
+      "hint": "hint: 'admin' is the user with extended privileges",
       "title": "Login window"
     }
   },
