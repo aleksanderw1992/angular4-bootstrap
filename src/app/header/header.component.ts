@@ -13,12 +13,12 @@ import {ConfirmDialogComponent} from "../common/confirm-dialog/confirm-dialog.co
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  dropdownLabels: Array<{ id: string, name: string, route: string }> = [
-    {id: 'main', name: 'Strona główna', route: '/main'},
-    {id: 'elements', name: 'Zarządzanie elementami', route: '/elements'},
-    {id: 'configuration', name: 'Konfiguracja aplikacji', route: '/configuration'}
+  dropdownLabels: Array<{ id: string, labelKey: string, route: string }> = [
+    {id: 'main', labelKey: 'nav.mainPage', route: '/main'},
+    {id: 'elements', labelKey: 'nav.elementsManagementPage', route: '/elements'},
+    {id: 'configuration', labelKey: 'nav.configurationPage', route: '/configuration'}
   ];
-  selectedPage: string = this.dropdownLabels[0].name;
+  selectedPage: string = this.dropdownLabels[0].labelKey;
 
   constructor(private router: Router,
               private appEventHolder: AppEventHolder,
@@ -26,12 +26,12 @@ export class HeaderComponent {
               public dialog: MdDialog) {
 
     this.appEventHolder.page.subscribe((data) => {
-      this.selectedPage = this.dropdownLabels.filter(e => e.id === data)[0].name as string;
+      this.selectedPage = this.dropdownLabels.filter(e => e.id === data)[0].labelKey as string;
     });
   }
 
   onToogle(index) {
-    this.selectedPage = this.dropdownLabels[index].name;
+    this.selectedPage = this.dropdownLabels[index].labelKey;
     this.router.navigate([this.dropdownLabels[index].route]);
   }
 
@@ -41,7 +41,7 @@ export class HeaderComponent {
   }
 
   authenticatedUser() {
-    return this.authenticationService.authenticatedUser || 'Gość';
+    return this.authenticationService.authenticatedUser || 'nav.unauthorisedUser';
   }
 
   login() {

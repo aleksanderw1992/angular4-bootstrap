@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <ul class="dropdown-menu" style="left:-157px;">
-          <li><a>{{authenticatedUser()}}</a></li>
+          <li><a>{{authenticatedUser()|translate}}</a></li>
           <li role="separator" class="divider"></li>
           <li><a class="global-pointer" (click)="onToogle(0)">{{'nav.mainPage' | translate}}</a></li>
           <li><a class="global-pointer" (click)="onToogle(1)">{{'nav.elementsManagementPage' | translate}}</a></li>
@@ -26,14 +26,14 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li class="dropdown active" appDropdown closeOnMouseLeave="true">
-          <a class="global-pointer dropdown-toggle" role="button">{{selectedPage}} <span class="caret"></span></a>
+          <a class="global-pointer dropdown-toggle" role="button">{{selectedPage|translate}} <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a class="global-pointer" (click)="onToogle(0)">{{'nav.mainPage' | translate}}</a></li>
             <li><a class="global-pointer" (click)="onToogle(1)">{{'nav.elementsManagementPage' | translate}}</a></li>
             <li><a class="global-pointer" (click)="onToogle(2)">{{'nav.configurationPage' | translate}}</a></li>
           </ul>
         </li>
-        <li><a>{{authenticatedUser()}}</a></li>
+        <li><a>{{authenticatedUser()|translate}}</a></li>
         <li *ngIf="isAuthenticated()"><a class="global-pointer" (click)="logout()">Wyloguj</a></li>
         <li *ngIf="!isAuthenticated()"><a class="global-pointer" (click)="login()">Zaloguj</a></li>
         <li><a class="global-pointer" style="color:red"  (click)="clear()">Reset DB</a></li>
