@@ -93,8 +93,8 @@
         "title": "Title",
         "author": "Author",
         "isbn": "ISBN",
-        "category": "Genres",
-        "medium": "Medium types",
+        "category": "Genre",
+        "medium": "Medium type",
         "cover": "Cover types",
         "price": "Price",
         "coverImg": "Cover"
