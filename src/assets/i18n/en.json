@@ -1,7 +1,7 @@
 {
   "main": {
     "topPurchasedBooks": "Top purchased books",
-    "bookTitle": "Book title i",
+    "bookTitle": "Book title",
     "numberOfOrderedBooks": "Number of ordered copies"
   },
   "nav":{
