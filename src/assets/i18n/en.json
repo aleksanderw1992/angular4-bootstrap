@@ -1,6 +1,8 @@
 {
   "main": {
-    "topPurchasedBooks": "Top purchased books"
+    "topPurchasedBooks": "Top purchased books",
+    "bookTitle": "Nazwa książki",
+    "numberOfOrderedBooks": "Liczba zamówionych egzemplarzy"
   },
   "nav":{
     "mainPage":"Main page",
@@ -10,6 +12,100 @@
     "login":"Login",
     "logout":"Logout",
     "resetDb":"Reset DB"
-
+  },
+  "footer": {
+    "text": "Praca zaliczeniowa dokumentująca znajomość technologii frontendowych"
+  },
+  "modal": {
+    "confirmLogout": "Czy na pewno chcesz się wylogować?",
+    "insufficientPrivileges": "Nie masz wystarczających uprawnień",
+    "addedBook": "Dodano jeden egzemplarz książki do koszyka",
+    "okBtn": "Ok",
+    "backBtn": "Wróć",
+    "alertTitle": "Okno informacyjne",
+    "confirmTitle": "Okno potwierdzenia",
+    "login": {
+      "cancelBtn": "Wróć",
+      "loginBtn": "Zaloguj",
+      "hint": "hint: 'admin' is user with extended privileges",
+      "title": "Okno logowania"
+    }
+  },
+  "configuration": {
+    "language": "Język aplikacji",
+    "maxTime": "Maksymalny czas oczekiwania na wykonanie zapytania po dane (ms)",
+    "saveBtn": "Zapisz"
+  },
+  "elements": {
+    "element": "Element",
+    "addBtn": "Dodaj",
+    "readonlyMessage": "Strona ta wyświetlana jest w trybie tylko do odczytu",
+    "pagination": {
+      "numberOnPage": "Ilość elementów na stronie:",
+      "page": "Strona ",
+      "of": "z"
+    },
+    "modal": {
+      "confirmDeleteMessage": "Czy na pewno chcesz usunąć ten element?",
+      "view": {
+        "title": "Okno podglądu",
+        "cancel": "Wróć"
+      },
+      "add": {
+        "title": "Okno dodawania",
+        "confirm": "Dodaj",
+        "cancel": "Wróć"
+      },
+      "edit": {
+        "title": "Okno edycji",
+        "confirm": "Edytuj",
+        "cancel": "Wróć"
+      },
+      "delete": {
+        "title": "Okno usunięcia",
+        "confirm": "Usuń",
+        "cancel": "Wróć"
+      }
+    },
+    "dropdown": {
+      "author": "Autor",
+      "category": "Kategoria",
+      "country": "Kraj",
+      "book": "Ksiazka",
+      "medium": "Rodzaj nosnika",
+      "cover": "Rodzaj okladki"
+    },
+    "table": {
+      "action": "Akcja",
+      "author": {
+        "firstName": "Imie",
+        "surname": "Nazwisko",
+        "country": "Kraj"
+      },
+      "category": {
+        "name": "Nazwa"
+      },
+      "country": {
+        "origName": "Nazwa w j. oryginalnym",
+        "flag": "Flaga"
+      },
+      "book": {
+        "title": "Tytuł",
+        "author": "Autor",
+        "isbn": "ISBN",
+        "category": "Kategorie",
+        "medium": "Rodzaje nośników",
+        "cover": "Rodzaje okładek",
+        "price": "Cena",
+        "coverImg": "Okładka"
+      },
+      "medium": {
+        "name": "Nazwa"
+      },
+      "cover": {
+        "name": "Nazwa"
+      }
+    }
   }
 }
+
