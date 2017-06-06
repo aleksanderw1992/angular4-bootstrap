@@ -1,9 +1,9 @@
-<h1 md-dialog-title>Zaloguj</h1>
+<h1 md-dialog-title>{{'modal.login.title'|translate}}</h1>
 <form #f="ngForm">
   <div md-dialog-content>
     <aside>
       <p>
-        hint: 'admin' is user with extended privileges
+        {{'modal.login.hint'|translate}}
       </p>
     </aside>
     <input type="text" class="form-control" [ngModel]="username" name="username" required>
@@ -12,11 +12,11 @@
     <div class="row">
       <div class="col-sm-6 col-md-5 col-md-offset-1">
         <button type="submit" class="btn btn-primary" [disabled]="f.form.invalid" md-button (click)="login(f)">
-          Zaloguj
+          {{'modal.login.loginBtn'|translate}}
         </button>
       </div>
       <div class="col-sm-6 col-md-5 col-md-offset-1">
-        <button md-button (click)="cancel(f)">Wróć</button>
+        <button md-button (click)="cancel(f)">{{'modal.login.cancelBtn'|translate}}</button>
       </div>
     </div>
   </div>

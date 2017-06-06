@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
     <div class="form-group">
-      <label for="language">Jezyk aplikacji</label>
+      <label for="language">{{'configuration.language' | translate}}</label>
       <select
         id="language"
         class="form-control"
@@ -11,7 +11,7 @@
       </select>
     </div>
     <div class="form-group">
-      <label for="maxtime">Maksymalny czas oczekiwania na wykonanie zapytania po dane (ms)</label>
+      <label for="maxtime">{{'configuration.maxTime' | translate}}</label>
       <input
         type="number"
         id="maxtime"
@@ -20,7 +20,7 @@
     </div>
     <button
       class="btn btn-primary"
-      (click)="onUpdateConfig()">Zapisz
+      (click)="onUpdateConfig()">{{'configuration.saveBtn' | translate}}
     </button>
   </div>
 </div>

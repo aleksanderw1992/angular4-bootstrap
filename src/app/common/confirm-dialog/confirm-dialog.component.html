@@ -1,14 +1,14 @@
-<h1 md-dialog-title>{{data.title|| 'Okno potwierdzenia'}}</h1>
+<h1 md-dialog-title>{{ (data.title|| 'modal.confirmTitle') |translate}}</h1>
 <div md-dialog-content>
-  {{data.content}}
+  {{data.content| translate}}
 </div>
 <div md-dialog-actions>
   <div class="row">
     <div class="col-sm-6 col-md-5 col-md-offset-1">
-      <button md-button (click)="confirm()">Ok</button>
+      <button md-button (click)="confirm()">{{'modal.okBtn' | translate}}</button>
     </div>
     <div class="col-sm-6 col-md-5 col-md-offset-1">
-      <button md-button (click)="close()">Wróć</button>
+      <button md-button (click)="close()">{{'modal.backBtn' | translate}}</button>
     </div>
   </div>
 </div>

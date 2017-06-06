@@ -127,7 +127,7 @@ export class ElementsTableComponent implements OnInit {
     if (crudDialogOption !== 'view' && this.disableEditingAccess()) {
       let dialogRef = this.dialog.open(AlertDialogComponent, {
         data: {
-          content: 'Nie masz wystarczających uprawnień'
+          content: 'modal.insufficientPrivileges'
         },
         disableClose: true,
         role: 'dialog'
@@ -207,7 +207,7 @@ export class ElementsTableComponent implements OnInit {
     this.repository.addSingleOrder(i)
     let dialogRef = this.dialog.open(AlertDialogComponent, {
       data: {
-        content: 'Dodano jeden egzemplarz książki do koszyka'
+        content: 'modal.addedBook'
       },
       disableClose: true,
       role: 'dialog'

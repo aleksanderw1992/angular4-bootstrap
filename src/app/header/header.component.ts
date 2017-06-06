@@ -64,7 +64,7 @@ export class HeaderComponent {
   logout(){
     let dialogRef = this.dialog.open(ConfirmDialogComponent, {
       data: {
-        content:'Czy na pewno chcesz się wylogować?'
+        content:'modal.confirmLogout'
       },
       disableClose: true,
       role: 'dialog'

@@ -1,11 +1,11 @@
-<h1 md-dialog-title>{{data.title|| 'Okno informacyjne'}}</h1>
+<h1 md-dialog-title>{{ (data.title|| 'modal.alertTitle')|translate}}</h1>
 <div md-dialog-content>
-  {{data.content}}
+  {{data.content | translate}}
 </div>
 <div md-dialog-actions>
   <div class="row">
     <div class="col-sm-6 col-md-5 col-md-offset-1">
-      <button md-button (click)="close()">Ok</button>
+      <button md-button (click)="close()">{{'modal.okBtn' | translate}}</button>
     </div>
   </div>
 </div>
