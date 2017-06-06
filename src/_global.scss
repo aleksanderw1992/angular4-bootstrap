@@ -4,3 +4,7 @@
 .global-pointer{
   cursor: pointer;
 }
+.navbar-fixed-top{
+  //sorry - otherwise grey backdrop does doe cover whole page
+  z-index: 990;
+}
