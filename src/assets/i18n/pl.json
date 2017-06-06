@@ -1,37 +1,83 @@
 {
   "main": {
     "topPurchasedBooks": "Najczęściej kupowane książki",
-    "bookTitle":"Nazwa książki",
-    "numberOfOrderedBooks":"Liczba zamówionych egzemplarzy"
+    "bookTitle": "Nazwa książki",
+    "numberOfOrderedBooks": "Liczba zamówionych egzemplarzy"
   },
-  "nav":{
-    "mainPage":"Strona główna",
-    "elementsManagementPage":"Zarządzanie elementami",
-    "configurationPage":"Konfiguracja aplikacji",
-    "unauthorisedUser":"Gość",
-    "login":"Zaloguj",
-    "logout":"Wyloguj",
-    "resetDb":"Wyczyść bazę"
+  "nav": {
+    "mainPage": "Strona główna",
+    "elementsManagementPage": "Zarządzanie elementami",
+    "configurationPage": "Konfiguracja aplikacji",
+    "unauthorisedUser": "Gość",
+    "login": "Zaloguj",
+    "logout": "Wyloguj",
+    "resetDb": "Wyczyść bazę"
   },
-  "modal":{
-    "confirmLogout":"Czy na pewno chcesz się wylogować?",
-    "insufficientPrivileges":"Nie masz wystarczających uprawnień",
-    "addedBook":"Dodano jeden egzemplarz książki do koszyka",
-    "okBtn":"Ok",
-    "backBtn":"Wróć",
-    "alertTitle":"Okno informacyjne",
-    "confirmTitle":"Okno potwierdzenia",
-    "login":{
-      "cancelBtn":"Wróć",
-      "loginBtn":"Zaloguj",
-      "hint":"hint: 'admin' is user with extended privileges",
-      "title":"Okno logowania"
+  "footer": {
+    "text": "Praca zaliczeniowa dokumentująca znajomość technologii frontendowych"
+  },
+  "modal": {
+    "confirmLogout": "Czy na pewno chcesz się wylogować?",
+    "insufficientPrivileges": "Nie masz wystarczających uprawnień",
+    "addedBook": "Dodano jeden egzemplarz książki do koszyka",
+    "okBtn": "Ok",
+    "backBtn": "Wróć",
+    "alertTitle": "Okno informacyjne",
+    "confirmTitle": "Okno potwierdzenia",
+    "login": {
+      "cancelBtn": "Wróć",
+      "loginBtn": "Zaloguj",
+      "hint": "hint: 'admin' is user with extended privileges",
+      "title": "Okno logowania"
     }
   },
-  "configuration":{
+  "configuration": {
     "language": "Język aplikacji",
     "maxTime": "Maksymalny czas oczekiwania na wykonanie zapytania po dane (ms)",
-    "saveBtn":"Zapisz"
+    "saveBtn": "Zapisz"
+  },
+  "elements": {
+    "element": "Element",
+    "addBtn": "Dodaj",
+    "readonlyMessage": "Strona ta wyświetlana jest w trybie tylko do odczytu",
+    "pagination": {
+      "numberOnPage": "Ilość elementów na stronie:",
+      "page": "Strona ",
+      "of": "z"
+    },
+    "modal": {
+      "confirmDeleteMessage": "Czy na pewno chcesz usunąć ten element?",
+      "view": {
+        "title": "Okno podglądu",
+        "cancel": "Wróć"
+      },
+      "add": {
+        "title": "Okno dodawania",
+        "confirm": "Dodaj",
+        "cancel": "Wróć"
+      },
+      "edit": {
+        "title": "Okno edycji",
+        "confirm": "Edytuj",
+        "cancel": "Wróć"
+      },
+      "delete": {
+        "title": "Okno usunięcia",
+        "confirm": "Usuń",
+        "cancel": "Wróć"
+      }
+    },
+    "dropdown": {
+      "author": "Autor",
+      "category": "Kategoria",
+      "country": "Kraj",
+      "book": "Ksiazka",
+      "medium": "Rodzaj nosnika",
+      "cover": "Rodzaj okladki"
+    },
+    "table": {
+      "action": "Akcja"
+    }
   }
 }
 /*

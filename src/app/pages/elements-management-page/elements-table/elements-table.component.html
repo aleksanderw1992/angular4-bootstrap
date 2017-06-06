@@ -1,14 +1,14 @@
 <div class="row" *ngIf="disableEditingAccess()">
   <div class="col-md-12">
     <p>
-      Strona ta wyświetlana jest w trybie tylko do odczytu
+      {{'elements.readonlyMessage'|translate}}
     </p>
   </div>
 </div>
 <div class="row">
   <div class="col-md-12">
     <button (click)="add()" [disabled]="element==='country'" class="btn btn-primary"><span
-      class="glyphicon glyphicon-plus"></span> Dodaj
+      class="glyphicon glyphicon-plus"></span> {{'elements.addBtn'|translate}}
     </button>
   </div>
 </div>
@@ -23,7 +23,7 @@
           <span *ngIf="sortType.isNotNone() && sortedCol === col" [class]="sortType.getClass()"></span>
         </th>
         <th>
-          Akcja
+          {{'elements.table.action'|translate}}
         </th>
       </tr>
       </thead>
@@ -48,7 +48,7 @@
   <div class="col-md-12">
 
     <p>
-      Ilość elementów na stronie:
+      {{'elements.pagination.numberOnPage'|translate}}
       <select [(ngModel)]="elemOnPage">
         <option>5</option>
         <option>10</option>
@@ -59,9 +59,9 @@
       </select>
     </p>
     <p>
-      Strona <select [disabled]="getMaxPage()===1" (change)="onPageNrSelectChange()" #pageNumberSelect>
+      {{'elements.pagination.page'|translate}} <select [disabled]="getMaxPage()===1" (change)="onPageNrSelectChange()" #pageNumberSelect>
       <option *ngFor="let i of getSelectArray()">{{i}}</option>
-    </select> z {{getMaxPage()}}
+    </select> z {{'elements.pagination.of'|translate}} {{getMaxPage()}}
     </p>
     <p>
       <span class="glyphicon glyphicon-backward" (click)="movePaginator('first')"></span>

@@ -13,10 +13,10 @@ export class ElementDetailsDialogComponent {
               @Inject(MD_DIALOG_DATA) public data: any) {
   }
   constants = {
-    view: {title:'Okno podglądu', confirm: '', cancel: 'Wróć'},
-    add: {title:'Okno dodawania', confirm: 'Dodaj', cancel: 'Wróć'},
-    edit: {title:'Okno edycji', confirm: 'Edytuj', cancel: 'Wróć'},
-    delete: {title:'Okno usunięcia', confirm: 'Usuń', cancel: 'Wróć'},
+    view: {title:'elements.modal.view.title', confirm: '', cancel: 'elements.modal.view.cancel'},
+    add: {title:'elements.modal.add.title', confirm: 'elements.modal.add.confirm', cancel: 'elements.modal.add.cancel'},
+    edit: {title:'elements.modal.edit.title', confirm: 'elements.modal.edit.confirm', cancel: 'elements.modal.edit.cancel'},
+    delete: {title:'elements.modal.delete.title', confirm: 'elements.modal.delete.confirm', cancel: 'elements.modal.delete.cancel'},
   }
 
   save(f:any) {
