@@ -1,73 +1,87 @@
-<div class="row" *ngIf="disableEditingAccess()">
-  <div class="col-md-12">
-    <p>
-      {{'elements.readonlyMessage'|translate}}
-    </p>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row" *ngIf="disableEditingAccess()">
+      <div class="col-md-12">
+        <p>
+          {{'elements.readonlyMessage'|translate}}
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <button (click)="add()" [disabled]="element==='country'" class="btn btn-primary"><span
+          class="glyphicon glyphicon-plus"></span> {{'elements.addBtn'|translate}}
+        </button>
+      </div>
+    </div>
   </div>
 </div>
-<div class="row">
-  <div class="col-md-12">
-    <button (click)="add()" [disabled]="element==='country'" class="btn btn-primary"><span
-      class="glyphicon glyphicon-plus"></span> {{'elements.addBtn'|translate}}
-    </button>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table">
+          <thead>
+          <tr>
+            <th *ngFor="let col of model.columns" (click)="sort(col)"
+                [class]="col.notSortable===true?'':'global-pointer'">
+              {{col.value|translate}}
+              <span *ngIf="sortType.isNotNone() && sortedCol === col" [class]="sortType.getClass()"></span>
+            </th>
+            <th>
+              {{'elements.table.action'|translate}}
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let row of getData()">
+            <td *ngFor="let col of model.columns">
+              <div innerHTML="{{getTd(row.data,col)}}"></div>
+              <!--{{getTd(row,col)}}-->
+            </td>
+            <td>
+              <span (click)="view(row.i)" class="glyphicon glyphicon-eye-open"></span>
+              <span (click)="order(row.i)" *ngIf="element==='book'" class="glyphicon glyphicon-shopping-cart"></span>
+              <span (click)="edit(row.i)" *ngIf="element!=='country'" class="glyphicon glyphicon-edit"></span>
+              <span (click)="delete(row.i)" *ngIf="element!=='country'" class="glyphicon glyphicon-remove"></span>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </div>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-12">
 
-<div class="row">
-  <div class="col-md-12">
-    <table class="table">
-      <thead>
-      <tr>
-        <th *ngFor="let col of model.columns" (click)="sort(col)" [class]="col.notSortable===true?'':'global-pointer'">
-          {{col.value|translate}}
-          <span *ngIf="sortType.isNotNone() && sortedCol === col" [class]="sortType.getClass()"></span>
-        </th>
-        <th>
-          {{'elements.table.action'|translate}}
-        </th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let row of getData()">
-        <td *ngFor="let col of model.columns">
-          <div innerHTML="{{getTd(row.data,col)}}"></div>
-          <!--{{getTd(row,col)}}-->
-        </td>
-        <td>
-          <span (click)="view(row.i)" class="glyphicon glyphicon-eye-open"></span>
-          <span (click)="order(row.i)" *ngIf="element==='book'" class="glyphicon glyphicon-shopping-cart"></span>
-          <span (click)="edit(row.i)" *ngIf="element!=='country'" class="glyphicon glyphicon-edit"></span>
-          <span (click)="delete(row.i)" *ngIf="element!=='country'" class="glyphicon glyphicon-remove"></span>
-        </td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-12">
+        <p>
+          {{'elements.pagination.numberOnPage'|translate}}
+          <select [(ngModel)]="elemOnPage">
+            <option>5</option>
+            <option>10</option>
+            <option>15</option>
+            <option>20</option>
+            <option>50</option>
+            <option>100</option>
+          </select>
+        </p>
+        <p>
+          {{'elements.pagination.page'|translate}} <select [disabled]="getMaxPage()===1"
+                                                           (change)="onPageNrSelectChange()" #pageNumberSelect>
+          <option *ngFor="let i of getSelectArray()">{{i}}</option>
+        </select> z {{'elements.pagination.of'|translate}} {{getMaxPage()}}
+        </p>
+        <p>
+          <span class="glyphicon glyphicon-backward" (click)="movePaginator('first')"></span>
+          <span class="glyphicon glyphicon-chevron-left" (click)="movePaginator(-1)"></span>
+          <span class="glyphicon glyphicon-chevron-right" (click)="movePaginator(1)"></span>
+          <span class="glyphicon glyphicon-forward" (click)="movePaginator('last')"></span>
+        </p>
+      </div>
+    </div>
 
-    <p>
-      {{'elements.pagination.numberOnPage'|translate}}
-      <select [(ngModel)]="elemOnPage">
-        <option>5</option>
-        <option>10</option>
-        <option>15</option>
-        <option>20</option>
-        <option>50</option>
-        <option>100</option>
-      </select>
-    </p>
-    <p>
-      {{'elements.pagination.page'|translate}} <select [disabled]="getMaxPage()===1" (change)="onPageNrSelectChange()" #pageNumberSelect>
-      <option *ngFor="let i of getSelectArray()">{{i}}</option>
-    </select> z {{'elements.pagination.of'|translate}} {{getMaxPage()}}
-    </p>
-    <p>
-      <span class="glyphicon glyphicon-backward" (click)="movePaginator('first')"></span>
-      <span class="glyphicon glyphicon-chevron-left" (click)="movePaginator(-1)"></span>
-      <span class="glyphicon glyphicon-chevron-right" (click)="movePaginator(1)"></span>
-      <span class="glyphicon glyphicon-forward" (click)="movePaginator('last')"></span>
-    </p>
   </div>
 </div>

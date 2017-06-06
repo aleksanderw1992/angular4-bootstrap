@@ -1,28 +1,34 @@
-<div class="row">
-  <div class="col-md-12">
-    <p>{{'main.topPurchasedBooks' | translate}}</p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>{{'main.topPurchasedBooks' | translate}}</h3>
+      </div>
+    </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-md-12">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-12">
 
-    <table class="table table-responsive">
-      <thead>
-      <tr>
-        <th>
-          {{'main.bookTitle' | translate}}
-        </th>
-        <th>
-          {{'main.numberOfOrderedBooks' | translate}}
-        </th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let row of getOrderBooks(); let i = index;">
-        <td>{{''+row.bookTitle}}</td>
-        <td>{{''+row.orderCount}}</td>
-      </tr>
-      </tbody>
-    </table>
+        <table class="table table-responsive">
+          <thead>
+          <tr>
+            <th>
+              {{'main.bookTitle' | translate}}
+            </th>
+            <th>
+              {{'main.numberOfOrderedBooks' | translate}}
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let row of getOrderBooks(); let i = index;">
+            <td>{{''+row.bookTitle}}</td>
+            <td>{{''+row.orderCount}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </div>

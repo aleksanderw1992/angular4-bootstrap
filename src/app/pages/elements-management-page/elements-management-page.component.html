@@ -1,21 +1,27 @@
-<div class="row">
-  <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-    <div class="form-group">
-      <label for="element">{{'elements.element'|translate}}</label>
-      <select
-        id="element"
-        class="form-control"
-        [(ngModel)]="element"
-        (change)="onElementChosen()">
-        <option value="author">{{'elements.dropdown.author'|translate}}</option>
-        <option value="category">{{'elements.dropdown.category'|translate}}</option>
-        <option value="country">{{'elements.dropdown.country'|translate}}</option>
-        <option value="book">{{'elements.dropdown.book'|translate}}</option>
-        <option value="medium">{{'elements.dropdown.medium'|translate}}</option>
-        <option value="cover">{{'elements.dropdown.cover'|translate}}</option>
-      </select>
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+          <div class="form-group">
+            <label for="element">{{'elements.element'|translate}}</label>
+            <select
+              id="element"
+              class="form-control"
+              [(ngModel)]="element"
+              (change)="onElementChosen()">
+              <option value="author">{{'elements.dropdown.author'|translate}}</option>
+              <option value="category">{{'elements.dropdown.category'|translate}}</option>
+              <option value="country">{{'elements.dropdown.country'|translate}}</option>
+              <option value="book">{{'elements.dropdown.book'|translate}}</option>
+              <option value="medium">{{'elements.dropdown.medium'|translate}}</option>
+              <option value="cover">{{'elements.dropdown.cover'|translate}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
+</div>
