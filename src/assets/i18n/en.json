@@ -1,8 +1,8 @@
 {
   "main": {
     "topPurchasedBooks": "Top purchased books",
-    "bookTitle": "Nazwa książki",
-    "numberOfOrderedBooks": "Liczba zamówionych egzemplarzy"
+    "bookTitle": "Book title i",
+    "numberOfOrderedBooks": "Number of ordered copies"
   },
   "nav":{
     "mainPage":"Main page",
@@ -14,96 +14,96 @@
     "resetDb":"Reset DB"
   },
   "footer": {
-    "text": "Praca zaliczeniowa dokumentująca znajomość technologii frontendowych"
+    "text": "Pet project documenting knowledge of frontend technologies"
   },
   "modal": {
-    "confirmLogout": "Czy na pewno chcesz się wylogować?",
-    "insufficientPrivileges": "Nie masz wystarczających uprawnień",
-    "addedBook": "Dodano jeden egzemplarz książki do koszyka",
+    "confirmLogout": "Are you sure that you want to logout?",
+    "insufficientPrivileges": "You do not have sufficient privileges",
+    "addedBook": "Added one book copy",
     "okBtn": "Ok",
-    "backBtn": "Wróć",
-    "alertTitle": "Okno informacyjne",
-    "confirmTitle": "Okno potwierdzenia",
+    "backBtn": "Back",
+    "alertTitle": "Information window",
+    "confirmTitle": "Confirmation window",
     "login": {
-      "cancelBtn": "Wróć",
-      "loginBtn": "Zaloguj",
+      "cancelBtn": "Back",
+      "loginBtn": "Login",
       "hint": "hint: 'admin' is user with extended privileges",
-      "title": "Okno logowania"
+      "title": "Login window"
     }
   },
   "configuration": {
-    "language": "Język aplikacji",
-    "maxTime": "Maksymalny czas oczekiwania na wykonanie zapytania po dane (ms)",
-    "saveBtn": "Zapisz"
+    "language": "Application language",
+    "maxTime": "Maximum time to fetch data (ms)",
+    "saveBtn": "Save"
   },
   "elements": {
     "element": "Element",
-    "addBtn": "Dodaj",
-    "readonlyMessage": "Strona ta wyświetlana jest w trybie tylko do odczytu",
+    "addBtn": "Add",
+    "readonlyMessage": "This page in displayed in readonly mode",
     "pagination": {
-      "numberOnPage": "Ilość elementów na stronie:",
-      "page": "Strona ",
-      "of": "z"
+      "numberOnPage": "Number of elements on page:",
+      "page": "Page ",
+      "of": "of"
     },
     "modal": {
-      "confirmDeleteMessage": "Czy na pewno chcesz usunąć ten element?",
+      "confirmDeleteMessage": "Do you want to delete this element?",
       "view": {
-        "title": "Okno podglądu",
-        "cancel": "Wróć"
+        "title": "View window",
+        "cancel": "Back"
       },
       "add": {
-        "title": "Okno dodawania",
-        "confirm": "Dodaj",
-        "cancel": "Wróć"
+        "title": "Add widdow",
+        "confirm": "Add",
+        "cancel": "Back"
       },
       "edit": {
-        "title": "Okno edycji",
-        "confirm": "Edytuj",
-        "cancel": "Wróć"
+        "title": "Edit window",
+        "confirm": "Edit",
+        "cancel": "Back"
       },
       "delete": {
-        "title": "Okno usunięcia",
-        "confirm": "Usuń",
-        "cancel": "Wróć"
+        "title": "Delete window",
+        "confirm": "Delete",
+        "cancel": "Back"
       }
     },
     "dropdown": {
-      "author": "Autor",
-      "category": "Kategoria",
-      "country": "Kraj",
-      "book": "Ksiazka",
-      "medium": "Rodzaj nosnika",
-      "cover": "Rodzaj okladki"
+      "author": "Author",
+      "category": "Genre",
+      "country": "Country",
+      "book": "Book",
+      "medium": "Medium type",
+      "cover": "Cover type"
     },
     "table": {
-      "action": "Akcja",
+      "action": "Action",
       "author": {
-        "firstName": "Imie",
-        "surname": "Nazwisko",
-        "country": "Kraj"
+        "firstName": "First name",
+        "surname": "Surname",
+        "country": "Country"
       },
       "category": {
-        "name": "Nazwa"
+        "name": "Name"
       },
       "country": {
-        "origName": "Nazwa w j. oryginalnym",
-        "flag": "Flaga"
+        "origName": "Name in original language",
+        "flag": "Flag"
       },
       "book": {
-        "title": "Tytuł",
-        "author": "Autor",
+        "title": "Title",
+        "author": "Author",
         "isbn": "ISBN",
-        "category": "Kategorie",
-        "medium": "Rodzaje nośników",
-        "cover": "Rodzaje okładek",
-        "price": "Cena",
-        "coverImg": "Okładka"
+        "category": "Genres",
+        "medium": "Medium types",
+        "cover": "Cover types",
+        "price": "Price",
+        "coverImg": "Cover"
       },
       "medium": {
-        "name": "Nazwa"
+        "name": "Name"
       },
       "cover": {
-        "name": "Nazwa"
+        "name": "Name"
       }
     }
   }
