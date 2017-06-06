@@ -8,3 +8,9 @@
   //sorry - otherwise grey backdrop does doe cover whole page
   z-index: 990;
 }
+table{
+  table-layout: fixed;
+}
+td{
+  word-wrap:break-word
+}
