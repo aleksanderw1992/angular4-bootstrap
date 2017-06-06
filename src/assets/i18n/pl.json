@@ -16,6 +16,11 @@
   "footer": {
     "text": "Praca zaliczeniowa dokumentująca znajomość technologii frontendowych"
   },
+  "error":{
+    "title":"Ooops... an error occurred",
+    "contactYour":"Skontaktuj się z ",
+    "admin":"administratorem"
+  },
   "modal": {
     "confirmLogout": "Czy na pewno chcesz się wylogować?",
     "insufficientPrivileges": "Nie masz wystarczających uprawnień",

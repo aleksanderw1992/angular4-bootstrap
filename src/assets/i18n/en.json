@@ -16,6 +16,11 @@
   "footer": {
     "text": "Pet project documenting knowledge of frontend technologies"
   },
+  "error":{
+    "title":"Ooops... an error occurred",
+    "contactYour":"Please contact your ",
+    "admin":"administrator"
+  },
   "modal": {
     "confirmLogout": "Are you sure that you want to logout?",
     "insufficientPrivileges": "You do not have sufficient privileges",

@@ -1,6 +1,14 @@
-<div class="row">
-  <h3>Ooops... an error occurred </h3>
-  <p>{{ getErrorMessage() }}</p>
-  <p>Skontaktuj się z <a href="mailto:my-admin@amin.pl">administratorem</a></p>
+<div class="panel panel-danger">
+  <div class="panel-heading">
+    <h3>{{'error.title'|translate}}</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-12">
+        <p>{{ getErrorMessage() }}</p>
+        <p>{{'error.contactYour'|translate}} <a href="mailto:my-admin@amin.pl">{{'error.admin'|translate}}</a></p>
+      </div>
+    </div>
+  </div>
 </div>
 

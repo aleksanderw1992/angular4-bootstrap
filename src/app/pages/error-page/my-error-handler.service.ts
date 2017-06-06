@@ -9,10 +9,13 @@ export class MyErrorHandler implements ErrorHandler {
   constructor(private injector: Injector,
               private holder: MyErrorMessageHolder) {
   }
+  private anyErrorWithin2secunds=false;
 
   handleError(error) {
     //todo sorry big hack
-    if("Uncaught (in promise): Error: Cannot activate an already activated outlet" === error.message.substr(0,73)) return
+    if(this.anyErrorWithin2secunds)return;
+    this.anyErrorWithin2secunds=true;
+    setTimeout(()=>{this.anyErrorWithin2secunds=false;},2000);
     console.log('logging error message: '+error.message);
     this.holder.updateMessage(error.message)
     this.router.navigate(['/error'])
