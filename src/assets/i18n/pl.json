@@ -76,10 +76,35 @@
       "cover": "Rodzaj okladki"
     },
     "table": {
-      "action": "Akcja"
+      "action": "Akcja",
+      "author": {
+        "firstName": "Imie",
+        "surname": "Nazwisko",
+        "country": "Kraj"
+      },
+      "category": {
+        "name": "Nazwa"
+      },
+      "country": {
+        "origName": "Nazwa w j. oryginalnym",
+        "flag": "Flaga"
+      },
+      "book": {
+        "title": "Tytuł",
+        "author": "Autor",
+        "isbn": "ISBN",
+        "category": "Kategorie",
+        "medium": "Rodzaje nośników",
+        "cover": "Rodzaje okładek",
+        "price": "Cena",
+        "coverImg": "Okładka"
+      },
+      "medium": {
+        "name": "Nazwa"
+      },
+      "cover": {
+        "name": "Nazwa"
+      }
     }
   }
 }
-/*
-"":"",
-*/

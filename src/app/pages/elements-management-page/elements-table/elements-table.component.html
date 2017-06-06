@@ -19,7 +19,7 @@
       <thead>
       <tr>
         <th *ngFor="let col of model.columns" (click)="sort(col)" [class]="col.notSortable===true?'':'global-pointer'">
-          {{col.value}}
+          {{col.value|translate}}
           <span *ngIf="sortType.isNotNone() && sortedCol === col" [class]="sortType.getClass()"></span>
         </th>
         <th>

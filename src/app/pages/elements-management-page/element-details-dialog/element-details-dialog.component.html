@@ -9,7 +9,7 @@
       <tbody>
       <tr *ngFor="let attr of  data.model.columns; let i = index;">
         <td>
-          {{attr.value}}
+          {{attr.value|translate}}
         </td>
         <td>
           <input class="form-control" type="text" [ngModel]="!!data.data===true? data.data[attr.colName]:''"
