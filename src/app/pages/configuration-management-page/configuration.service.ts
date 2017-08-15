@@ -8,7 +8,7 @@ export class ConfigurationService{
 
   constructor(private translateService: TranslateService){
     this._maxTimeInMilis= localStorage._maxTimeInMilis ||10*1000
-    this._language= localStorage._language ||'pl'
+    this._language= localStorage._language ||'en'
   }
 
   update(maxTimeInMilis, language){
