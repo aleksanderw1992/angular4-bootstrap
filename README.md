@@ -5,7 +5,7 @@ This is a pet project showing skills in Angular4, Bootstrap4, SASS, Flexbox and 
 * Small UI improvements will be 
 * Changing screen flow
 
-##Angular CLI note
+## Angular CLI note
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.3.
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
