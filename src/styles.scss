@@ -12,6 +12,7 @@ Actually styleUrls: ['./header.component.scss'] is not necessary in components =
 @import './app/app.component.scss';
 @import './app/header/header.component.scss';
 @import './app/pages/elements-management-page/element-details-dialog/element-details-dialog.component.scss';
+//@import "~@angular/material/prebuilt-themes/indigo-pink.css"; //try this one! todo
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 
