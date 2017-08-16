@@ -1,5 +1,5 @@
 # BookStore
-This is a pet project showing skills in Angular4, Bootstrap4, SASS, Flexbox and other small libraries. It demands additional effort and my todo list includes:
+This is a pet project showing skills in Angular4, Bootstrap, SASS, Flexbox and other small libraries. It demands additional effort and my todo list includes:
 * Now CRUD operations are made without any solid API and are done using localStorage. I will go for NodeJS as backend later
 * Auth module is mocked - no passwords are stored
 * Small UI improvements will be 
