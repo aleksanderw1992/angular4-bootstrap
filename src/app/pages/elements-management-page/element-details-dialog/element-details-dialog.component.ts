@@ -1,6 +1,5 @@
 import {Component, Inject, Input} from '@angular/core';
 import {MD_DIALOG_DATA, MdDialog, MdDialogRef} from '@angular/material';
-import {NgModel} from "@angular/forms";
 
 
 @Component({
