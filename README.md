@@ -13,7 +13,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 ## Run application locally
-You need NodeJS with version 6.X - probably newer (7+.X) will also work. Then:
+You need NodeJS with version 6.X (tested on 6.10.3) - probably newer (7+.X) will also work and a browser (tested on Chrome). Then:
 * run `npm install`
 * run `npm start`
 * navigate to `http://localhost:4200/`
