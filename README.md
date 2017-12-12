@@ -1,4 +1,7 @@
 # BookStore
+**See app running:**  
+https://book-store-aleksanderw1992.herokuapp.com/  
+
 This is a pet project showing skills in Angular4, Bootstrap, SASS, Flexbox and other small libraries. It demands additional effort and my todo list includes:
 * Now CRUD operations are made without any solid API and are done using localStorage. I will go for NodeJS as backend later
 * Auth module is mocked - no passwords are stored
